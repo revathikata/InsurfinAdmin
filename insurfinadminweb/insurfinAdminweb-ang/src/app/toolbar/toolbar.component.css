@@ -1,0 +1,119 @@
+/* .headernav{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+     linear-gradient(171.32deg, #2791E0 -5.53%, #044178 110.9%);
+}
+ */
+.notify {
+    /* background: #EEF6FD; */
+    padding: 4px 5px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.notify img {
+    width: 30px;
+    height: 30px;
+}
+
+.notifyDistdot {
+    font-size: 50px;
+    position: relative;
+    top: -20px;
+    left: -18px;
+    color: #005AAA;
+}
+
+::ng-deep.profileMenu.mat-mdc-menu-panel.mat-mdc-menu-panel {
+    border: 1px solid #005AAA;
+    border-radius: 13px;
+}
+
+.profMenu:hover {
+    background-color: #EEF6FD;
+}
+
+::ng-deep.profileMenu .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
+    font-size: 13px;
+}
+
+.profile {
+    /* border-radius: 50%;
+    width: 48px; */
+    margin-left: 10px;
+    /* border: 1px solid grey; */
+}
+
+.headernav {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+    height: 64px;
+    left: 0;
+    background: #F8FCFF;
+}
+
+.example-spacer {
+    flex: 0.978 1 auto;
+}
+
+/* ::ng-deep.mat-toolbar-single-row{
+  background-color: white;
+    } */
+.togglemweb {
+    display: none;
+}
+
+.adminName {
+    margin-bottom: 0;
+    color: #005AAA;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.admintext {
+    margin-bottom: 0px;
+    margin-top: -6px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.userName {
+    margin-left: 10px;
+}
+
+@media (max-width:767px) {
+    .togglemweb {
+        display: block;
+        border-radius: 10px;
+        /* font-size: 20px; */
+        background-image: linear-gradient(90.06deg, #CED4DA 0.05%, #F8F9FA 96.47%) !important;
+    }
+}
+
+.menuLogoutBtn {
+    margin: auto;
+    display: flex;
+    background-color: #005AAA;
+    font-size: 13px;
+}
+
+.input-group-text-search {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.input-group {
+    width: 350px;
+    height: 42px;
+    margin-left: 8%;
+}
+
+.search-icon {
+    box-shadow: none !important;
+}

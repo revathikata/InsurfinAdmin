@@ -1,0 +1,177 @@
+<div class="pending-popup">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="distributor-dtls">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-10 mt-5 distributor-details">
+                        <P class="policyNumber">{{dialogData.proposalNumber}}</P>
+                    </div>
+                </div>
+                <div class="horizontal-line">
+                    <hr>
+                </div>
+                <div class="section container">
+                    <p class="personal-details" [class.selected]="proposerDetails" (click)="openProposerDetails()">Proposer Details</p>
+                </div>
+                <div class="horizontal-line">
+                    <hr class="hr-line">
+                </div>
+                <div class="section container mt-2">
+                    <p class="document-upload" [class.selected]="insurerDetails" (click)="openInsurerDetails()">Insurer Details</p>
+                </div>
+                <div class="horizontal-line">
+                    <hr class="hr-line">
+                </div>
+                <div class="section container mt-2">
+                    <p class="document-upload" [class.selected]="doccumentsSection" (click)="openDoccuments()">Documents</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8 p-0" *ngIf="proposerDetails">
+            <div class="row mt-5">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <mat-icon (click)="closePopup()">close</mat-icon>
+                </div>
+            </div>
+       
+            <div class="row ">
+                <div class="col-6">
+                    <p class="main-Field">Proposer Name</p>
+                    <p class="sub-field">{{dialogData.name}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Proposal Number</p>
+                    <p class="sub-field">{{dialogData.proposalNumber}}</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Date of Proposal</p>
+                    <p class="sub-field">{{dialogData.dateOfProposal}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Policy Tenure</p>
+                    <p class="sub-field">{{dialogData.policyTenure}}</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Product Category</p>
+                    <p class="sub-field">{{dialogData.productCategory}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Product Type</p>
+                    <p class="sub-field">{{dialogData.productTypeName}}</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Policy Amount  (₹)</p>
+                    <p class="sub-field">{{dialogData.premiumAmount}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Premium Amount (₹)</p>
+                    <p class="sub-field">{{dialogData.premiumAmount}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 p-0" *ngIf="insurerDetails">
+            <div class="row mt-5">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <mat-icon (click)="closePopup()">close</mat-icon>
+                </div>
+            </div>
+       
+            <div class="row ">
+                <div class="col-6">
+                    <p class="main-Field">Insurer</p>
+                    <p class="sub-field">{{dialogData?.insurerName}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Bank Name</p>
+                    <p class="sub-field">{{dialogData?.bankAccountDetails.bankName}}</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Account Number</p>
+                    <p class="sub-field">{{dialogData?.bankAccountDetails.accountNumber}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">IFSC</p>
+                    <p class="sub-field">{{dialogData?.bankAccountDetails.ifscCode}}</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Address</p>
+                    <p class="sub-field">{{dialogData?.bankAccountDetails.insurerAddress}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 p-0" *ngIf="doccumentsSection">
+            <div class="row mt-5">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <mat-icon (click)="closePopup()">close</mat-icon>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-8 main-Field">
+                    Signed Documents and Letters
+                </div>
+                <div class="col-4 download">
+                  <img  src="../../assets/download-cloud-img.svg">&nbsp;  Download All
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <p class="main-Field">Aadhaar</p>
+                    <p class="sub-field">**** **** 9012</p>
+                </div>
+                <div class="col-6">
+                    <span class="verifiedStatus"><img src="../../assets/arrow-left-circle.svg"> Verified</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <p class="main-Field">PAN</p>
+                    <p class="sub-field">******234F</p>
+                </div>
+                <div class="col-6">
+                    <span class="verifiedStatus"><img src="../../assets/arrow-left-circle.svg"> Verified</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <p class="main-Field">Insurer Payment Authorisation Letter</p>
+                    <div class="letter-Box"></div>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Lender Authorization Letter</p>
+                    <div class="letter-Box"></div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <p class="main-Field">Insurer Payment Authorisation Letter</p>
+                    <div class="letter-Box"></div>
+                </div>
+            </div>
+            <div class="row kyc-footer ">
+                <div class="col-6 mt-4 ">
+                    <button class="rejected-btn" (click)="onReject('proposalReject',dialogData.proposalId)">Reject</button>
+                </div>
+                <div class="col-6 mt-4">
+                    <button class="approved-btn" (click)="onApproval('proposalApprove',dialogData.proposalId)">Approve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+<div class="headernav justify-content-between">
+    <div class="row">
+    <div class="logo col-10">
+        <!-- <img class="logoimg" src="../../assets/InsurfinBlueLogo.svg" alt="insurfin"> -->
+        <div class="input-group mb-5 mt-3 container">
+            <span class="input-group-text bg-light" id="basic-addon1"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control border border-start-0 search-icon"
+                placeholder="Search for distributors or proposals">
+        </div>
+    </div>
+    <div class="menu col-2">
+        <div class="rightHeader d-flex mt-3">
+        <div class="notify">
+            <img src="../../assets/notifications-img.svg" alt="">
+        </div>
+        <span class="notifyDistdot">.</span>
+        <div class="profile " [matMenuTriggerFor]="menu">
+            <img src='../../assets/dummyProf.svg' alt="" class="UNFAPP-prfimg" style=" width: 40px;">
+            <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+<mat-menu #menu="matMenu" class="profileMenu">
+  <button mat-menu-item class="profMenu">Edit Profile</button>
+  <button mat-menu-item class="profMenu">Change Password</button>
+  <button class="btn btn-primary menuLogoutBtn" (click)="logout()">Logout</button>
+</mat-menu>
+        </div>
+        <div class="userName">
+            <h4 class="adminName">Raju</h4>
+            <h5 class="admintext">Admin</h5>
+        </div>
+    </div>
+    </div>
+<!-- <div class="col-2 mr-sm-2">
+    <mat-menu #menu="matMenu">
+        <button routerLink="/dashbord/edit-profile" class="btn-link " routerLinkActive="active" class="btn btn-outline-light" mat-menu-item style="border:white;background-color: white;" >                <mat-icon mat-list-icon>account_box</mat-icon>
+         Edit profile</button>
+         <button  class="btn btn-outline-light" mat-menu-item style="border:white;background-color: white;"> 
+              <mat-icon>lock</mat-icon>
+          Reset password</button>
+        <button class="btn btn-outline-light" mat-menu-item style="border:white;background-color: white;">     
+                       <mat-icon mat-list-icon>logout</mat-icon>
+          Logout</button>
+      </mat-menu>
+    </div> -->
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="aprrovedocument">
+    <mat-icon mat-button class="close-icon" [mat-dialog-close]="true">close</mat-icon>  
+    <div class="apprv">
+        <div class="tablee">
+            <table class="approveTable">
+                <tr >
+                    <th>Name</th>
+                    <th>Contact no</th>
+                    <th>Email Id</th>
+                    <th>Address line1</th>
+                    <th>Address line2</th>
+                    <th>city</th>
+                    <th>state</th>
+                    <th>pincode</th>
+
+                </tr>
+                <tr *ngFor="let td of alltable">
+                    <td>{{td.distributorName}}</td>
+                    <td>{{td.phoneNumber}}</td>
+                    <td>{{td.email}}</td>
+                    <td>{{td.address[0]?.addressLine1}}</td>
+                    <td>{{td.address[0]?.addressLine2}}</td>
+                    <td>{{td.address[0]?.city}}</td>
+                    <td>{{td.address[0]?.state}}</td>
+                    <td>{{td.address[0]?.pinCode}}</td>
+                </tr>
+            </table>
+            <div class="doc">
+                <div class="row">
+                    <!-- <div class="col-3 Adhar">
+                        <p class="NameCl mt-2">GST No.<span class="text-black">{{alltable.gstNumber}}</span></p>
+                       <div><img src="../../../assets/adhar.jfif" alt="" class="adharImg"></div>
+                    </div> -->
+                    <div class="col-4 Adhar" *ngFor="let doc of alltable">
+                        <p class="NameCl mt-2">Aadhaar No.<span class="text-black">{{alltable[0]?.aadhaarNumber}}</span></p>
+                       <div class="imgg d-flex" >
+                        
+                        <div ><img src="{{aadharfrontImg}}" alt="" class="adharImg"></div>
+                        <span><mat-checkbox class="example-margin" (change)="checkCheckBoxvalue($event,doc,0)" [(ngModel)]="checkBoxValue"></mat-checkbox>
+                        </span></div>
+                       <div class="imgg d-flex"><img src="{{aadharBackimg}}" alt="" class="adharImg">
+                        <!-- {{alltable[0].aadhaarFrontId}} -->
+                        <mat-checkbox class="example-margin" (change)="checkCheckBoxvalue($event,doc,1)" [(ngModel)]="checkAdharBack"></mat-checkbox></div>
+                       <!-- <mat-checkbox class="example-margin">Check me!</mat-checkbox> -->
+                    </div>
+                    <div class="col-4 pan" *ngFor="let doc of alltable">
+                        <p class="NameCl mt-2">Pan No.<span class="text-black">{{alltable[0]?.panNumber}}</span></p>
+                        <div class="imgg d-flex" >
+                        
+                            <div >
+                                <img src="{{panCardimg}}" alt="" class="adharImg">
+                            </div>
+                            <span><mat-checkbox class="example-margin" (change)="checkCheckBoxvalue($event,doc,2)" [(ngModel)]="checkpan"></mat-checkbox>
+                            </span></div>
+                    </div>
+                    <div class="col-4 bank" *ngFor="let doc of alltable">
+                        <p class="NameCl mt-2">Bank Account No.<span class="text-black">{{alltable[0]?.accountNumber}}</span></p>
+                            <p class="NameCl mt-2">Bank Name <span class="text-black">{{alltable[0]?.bankName}}</span></p>
+                            <p class="NameCl mt-2">Branch Name <span class="text-black">{{alltable[0]?.branchName}}</span> </p>
+                            <p class="NameCl mt-2">IFSC Code <span class="text-black">{{alltable[0]?.ifsccode}}</span></p>
+                                <p class="NameCl  mt-2">Gst No.<span class="text-black">{{alltable[0]?.gstNumber}}</span></p>
+                        <mat-checkbox class="example-margin" (change)="checkCheckBoxvalue($event,doc,3)" [(ngModel)]="checkbank" >Verify!</mat-checkbox>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+            <div class="commentDiv ">
+                <label >Add Comment</label><br>
+                  <textarea name="" id="" cols="85" rows="2" class="commnt"  placeholder="Your comment" [(ngModel)]="commnt"></textarea>
+              </div> 
+              
+            </div>
+            <div class="footer text-center m-3">
+        
+                <button class="btn btn-primary appovebtn"[disabled]="!(this.checkBoxValue && this.checkAdharBack && this.checkpan && this.checkbank)" (click)="update()">Approve</button>
+                <button class="btn btn-danger rejectbtn" (click)="reject($event)">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>

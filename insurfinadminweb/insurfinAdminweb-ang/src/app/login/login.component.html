@@ -1,0 +1,138 @@
+<!-- <div class="admin-page">
+    <div class="adminLogin container">
+        <div class="loginPage text-center">
+        <img class="logoimg" src="../../assets/InsurfinLogo.svg" alt="insurfin">
+        <h1 class="text-center">Admin Login page</h1>
+    </div>
+        <form [formGroup]="loginForm">
+            <div class="adminLoginform mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <form [formGroup]="loginForm">
+                        <div class="form-group mb-3">
+                            <label>Mobile Number</label>
+                            <input type="text" formControlName="mobileno" class="form-control mb-3"
+                                placeholder="Enter Mobiel Number">
+                            <small
+                                *ngIf="(loginForm.controls['mobileno'].touched   && loginForm.get('mobileno')?.hasError('required'))"
+                                style="color: red;">Mobile Number is Required</small>
+
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Email Id</label>
+                            <input type="text" formControlName="email" class="form-control mb-3"
+                                placeholder="Enter EmailId" [(ngModel)]="email" name="email" >
+                            <small
+                                *ngIf="(loginForm.controls['email'].touched   && loginForm.get('email')?.hasError('required'))"
+                                style="color: red;"> Email is Required</small>
+                            <small
+                                *ngIf="(loginForm.controls['email'].touched  && loginForm.get('email')?.hasError('pattern'))"
+                                style="color: red;"> Enter Valid Email</small>
+
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Password</label>
+                            <input type="password" formControlName="password" class="form-control mb-3"
+                                placeholder="Enter password" [(ngModel)]="password" name="password">
+                            <small
+                                *ngIf="(loginForm.controls['password'].touched && loginForm.get('password')?.hasError('required'))"
+                                style="color: red;">Password is required</small>
+
+                        </div>
+                    </form>
+                        <div class="btnn text-center">
+                            <button class="btn btn-primary loginBtn" (click)="loginbtn()">Login </button>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+
+
+<div class="main">
+    <div class="welcome">
+        <div class="row">
+            <div class="col-lg-6 img">
+                <div class="vector3">
+                    <img src="../../assets/Vector 3.svg">
+                </div>
+                <div class="logo">
+                    <img src="../../assets/Mask group.svg">
+                </div>
+                <div class="vector4">
+                    <img src="../../assets/Vector 4.svg">
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 rightcoloumn">
+                <div class="distrbtr-welcome">
+
+                    <div class="container" *ngIf="!isValid">
+                        <img class="welcome-bg" src="../../assets/welcome-bg.svg">
+
+                        <div>
+                            <h1>Welcome!<span>👋</span></h1>
+                            <p class="your">Enter your phone number or email ID to login</p>
+                        </div>
+                        <div class="form">
+                            <form [formGroup]="loginForm">
+                                <label class="phn">Email Id</label>
+                                <input type="email" class="form-control inpPhn" formControlName="email">
+                                    <small
+                                    *ngIf="(loginForm.controls['email'].touched  && loginForm.get('email')?.hasError('required'))"
+                                        style="color: red;">Email Number is required</small>
+                                    <small
+                                    *ngIf="(loginForm.controls['email'].touched  && loginForm.get('email')?.hasError('pattern'))"
+                                        style="color: red;">Enter valid Email</small>
+                            </form>
+                            <form [formGroup]="loginForm">
+                                <label class="phn">password</label>
+                                <input type="password" class="form-control inpPhn" formControlName="password" >
+                                    <small
+                                    *ngIf="(loginForm.controls['password'].touched  && loginForm.get('password')?.hasError('required'))"
+                                        style="color: red;">Phone Number is required</small>
+                                    <!-- <small
+                                    *ngIf="(loginForm.controls['phonenumber'].touched  && loginForm.get('phonenumber')?.hasError('pattern'))"
+                                        style="color: red;">Enter a valid 10 digit number</small> -->
+                                        <p style="color: red;" *ngIf="message">{{message}}</p>
+                            </form>
+                           
+                            <div>
+                                <p class="para">By continuing you agree to the <b class="terms">terms & conditions</b>
+                                    and <b class="privacy">privacy policy</b></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn1" (click)="loginbtn()"
+                            [disabled]="!loginForm.valid">Continue</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- <div class="container" *ngIf="isValid">
+                        <h1 class="verify">Verify phone number</h1>
+                        <p class="otp-mb">We sent the OTP to your mobile number.The code will expire in 1:59</p>
+                        <p class="code">Didn't get the code? <span class="sendColor">Send again</span></p>
+
+                            <div class="otpclss mt-5">
+                                <ngx-otp-input [config]="otpInputConfig" (otpchange)="handleOtp($event)"
+                                    (fill)="handleFill($event)">
+                                </ngx-otp-input>
+                                <small style="color: red;" *ngIf="message"> {{message}}</small>
+                            </div>
+
+                        <button class="btn btn-primary btn1" (click)="loginbtn()">Continue</button>
+                    </div> -->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

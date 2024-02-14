@@ -1,0 +1,134 @@
+.download {
+    font-size: 24px;
+    font-weight: 700;
+    color: #041427;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.pdf-report {
+    width: 650px;
+    height: 550px;
+    border-radius: 24px !important;
+}
+
+.horizontal-line {
+    margin-left: 10px;
+}
+
+.download-report {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-loans {
+    box-shadow: none;
+    border-radius: 12px;
+}
+
+.calender {
+    font-size: 16px;
+    font-weight: 700;
+    color: #041427;
+}
+
+.radio-btn {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #041427;
+}
+
+.horizontal-line {
+    margin-top: 25%;
+}
+
+.report-btn {
+    background-color: #005AAA;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    width: 300px;
+    height: 48px;
+    border-radius: 12px;
+    text-align: center;
+    margin-left: 25%;
+}
+
+::ng-deep.mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: 24px;
+    background: #FFF;
+}
+
+.ng-select.statedropdown::ng-deep .ng-arrow {
+    display: none;
+}
+
+.ng-select.statedropdown::ng-deep .ng-arrow-wrapper {
+    width: 27px;
+    background-image: url('/assets/CaretDownarrow.svg');
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+
+.ng-select-opened.statedropdown ::ng-deep .ng-arrow-wrapper {
+    background-image: url('/assets/Caretuparrow.svg');
+}
+
+::ng-deep.ng-select.statedropdown .ng-has-value .ng-placeholder {
+    display: none;
+}
+
+::ng-deep.statedropdown .ng-dropdown-panel .ng-dropdown-panel-items {
+    width: 100%;
+    border-radius: 0px 0px 12px 12px;
+    border: 1px solid var(--greys-secondary-text, #7D848D);
+    background: #FFF;
+    box-shadow: 0px 0px 10px 6px rgba(0, 90, 170, 0.02) inset;
+    position: relative;
+    left: -10px;
+    top: 5px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+::ng-deep.statedropdown.ng-select {
+    border: #C6C6C6 1.5px solid;
+    height: 40px !important;
+    border-radius: 12px;
+    padding: 10px;
+    background: white;
+}
+
+:host::ng-deep.custom-ngselect .ng-dropdown-panel .ng-option {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ccc;
+    color: var(--greys-secondary-text, #7D848D);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.mat-mdc-button:not(:disabled) {
+    color: #2791E0;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+.cancel{
+    color: #041427;
+text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; 
+background-color: #FFF;
+border: none;
+}

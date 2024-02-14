@@ -1,0 +1,50 @@
+<div class="aprrovedocument">
+    <mat-icon mat-button class="close-icon" [mat-dialog-close]="true">close</mat-icon>  
+    <div class="tablee">
+        <table class="approveTable">
+            <tr >
+                <th>Name</th>
+                <th>Contact no</th>
+                <th>Email Id</th>
+                <th>Address line1</th>
+                <th>Address line2</th>
+                <th>city</th>
+                <th>state</th>
+                <th>pincode</th>
+            </tr>
+            <tr *ngFor="let td of viewSelectedtablerow">
+                <td>{{td.distributorName}}</td>
+                <td>{{td.phoneNumber}}</td>
+                <td>{{td.email}}</td>
+                <td>{{td.address[0]?.addressLine1}}</td>
+                <td>{{td.address[0]?.addressLine2}}</td>
+                <td>{{td.address[0]?.city}}</td>
+                <td>{{td.address[0]?.state}}</td>
+                <td>{{td.address[0]?.pinCode}}</td>
+            </tr>
+        </table>
+        <div class="doc">
+            <div class="row">
+                <div class="col-4 Adhar">
+                    <p class="NameCl mt-2">Aadhaar No.<span class="text-black">{{viewSelectedtablerow[0]?.aadhaarNumber}}</span></p>
+                    <div><img src="{{viewSelectedtablerow[0]?.documents[0]?.s3Url}}" alt="" class="adharImg">
+                        <img src="{{viewSelectedtablerow[0]?.documents[1]?.s3Url}}" class="adharImg" alt="">
+                    </div>
+                 </div>
+                 <div class="col-4 pan">
+                    <p class="NameCl mt-2">Pan No.<span class="text-black">{{viewSelectedtablerow[0]?.panNumber}}</span></p>
+                     <img src="{{viewSelectedtablerow[0]?.documents[2]?.s3Url}}" class="adharImg" alt="">
+                 </div>
+                 <div class="col-4 bank">
+                    <p class="NameCl mt-2">Bank account No.<span class="text-black">{{viewSelectedtablerow[0]?.accountNumber}}</span></p>
+                     <!-- <img src="../../../assets/bank.jfif" alt="" class="adharImg"> -->
+                     <p class="NameCl mt-2">Branch Name.<span class="text-black">{{viewSelectedtablerow[0]?.bankName}}</span></p>
+                     <p class="NameCl mt-2">Branch Name.<span class="text-black">{{viewSelectedtablerow[0]?.branchName}}</span></p>
+                     <p class="NameCl mt-2">IFSC Code.<span class="text-black">{{viewSelectedtablerow[0]?.ifsccode}}</span></p>
+                     <p class="NameCl mt-2">Gst No.<span class="text-black">{{viewSelectedtablerow[0]?.gstNumber}}</span></p>
+                 </div>
+            </div>
+        </div>
+       
+    </div>
+</div>

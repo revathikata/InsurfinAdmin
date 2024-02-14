@@ -1,0 +1,69 @@
+
+        <div class="settings-page container">
+            <h1 class="settingHead-text">Settings</h1>
+            <div class="settg-pg">
+                <div class="admin-roles">
+
+                    <h1 class="assignRoles text-center">Assign Roles</h1>
+                
+                    <form [formGroup]="adminForm">
+                        <div class="form-controls">
+                        <label>Name<span>*</span></label>
+                        <input type="text" class="form-control" formControlName="name" required>
+                        <small *ngIf="(adminForm.controls['name'].touched && adminForm.get('name')?.hasError('required'))" style="color: red;"> Enter Your Name</small>
+                    </div>
+                      <div class="form-controls">
+                        <label>Email ID<span>*</span></label>
+                        <input type="text" class="form-control" formControlName="email">
+                        <small *ngIf="(adminForm.controls['email'].touched  && adminForm.get('email')?.hasError('required'))" style="color: red;"> Email is Required</small>
+                        <small *ngIf="(adminForm.controls['email'].touched  && adminForm.get('email')?.hasError('pattern'))" style="color: red;"> Enter Valid Email</small>
+                    </div>
+                    <div class="form-controls">
+                        <label>Contact No<span>*</span></label>
+                        <div class="row">
+                            <div class="col-8">
+                            <input type="text" class="form-control" formControlName="contactnum">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary sentOtp">Send OTP</button>
+                        </div>
+                        </div>
+                        <small *ngIf="(adminForm.controls['contactnum'].touched && adminForm.get('contactnum')?.hasError('required'))" style="color: red;">Contact Number is Required</small>
+                        <small *ngIf="(adminForm.controls['contactnum'].touched && adminForm.get('contactnum')?.hasError('pattern'))" style="color: red;"> Enter Valid Contact Number</small>
+                    </div>
+                    <div class="otpvalid">
+                        <h3 style="margin-top: 10px;">Enter OTP<span>*</span></h3>
+                        <div class="enter row">
+                            <div class="otp col-2">
+                                <input type="text" class="otpInp" maxlength="1">
+                            </div>
+                            <div class="otp col-2">
+                                <input type="text "class="otpInp" maxlength="1">
+                            </div>
+                            <div class="otp col-2">
+                                <input type="text" class="otpInp">
+                            </div>
+                            <div class="otp col-2"><input type="text" maxlength="1" class="otpInp"></div>
+                            <div class="otp col-2"><input type="text" maxlength="1" class="otpInp"></div>
+                            <div class="otp col-2"><input type="text" maxlength="1" class="otpInp"></div>
+                        </div>
+                    </div>
+                    <div class="form-controls">
+                    <label>Roles<span>*</span></label>
+                    <select class="form-select" aria-label="Default select example" formControlName="roles">
+                        <option selected>Open this select menu</option>
+                        <option>One</option>
+                        <option>Two</option>
+                        <option>Three</option>
+                      </select>
+                      <small *ngIf="(adminForm.controls['roles'].touched && adminForm.get('roles')?.hasError('required'))" style="color: red;">Role is Required</small>
+
+                    </div>
+                    </form>
+                
+                    <div class="footer text-center mt-3" >
+                        <button class="btn btn-primary continueBtn" (click)="validate()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>

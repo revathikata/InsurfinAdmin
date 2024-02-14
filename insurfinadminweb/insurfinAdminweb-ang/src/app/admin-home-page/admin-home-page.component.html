@@ -1,0 +1,357 @@
+<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search m-0">
+
+    <div class="container calender-dropdown">
+        <!-- <div class="input-group mb-5 mt-3 container">
+            <span class="input-group-text bg-light" id="basic-addon1"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control border border-start-0 search-icon"
+                placeholder="Search for distributors">
+        </div> -->
+        <div>
+            <ng-select class="selectDate" [items]="dropdown" [clearable]="false" [searchable]="false"
+                placeholder="This week" (change)="onDropdownChange()" [(ngModel)]="selectedOption" name="selectedOption"
+                bindLabel="" bindValue="">
+                <ng-template ng-option-tmp let-item="item" class="option">{{item}}
+                    <span *ngIf="selectedOption === item" class="checkmark"><mat-icon
+                            class="maticonclass">check_circle</mat-icon></span>
+                </ng-template>
+            </ng-select>
+
+        </div>
+        <div *ngIf="selectedOption === 'Custom'" class="daterangec">
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                <input matStartDate formControlName="start" placeholder="Start date"
+                    (dateInput)="formatDateEvent($event.target.value, 'start')" />
+
+                <input matEndDate formControlName="end" placeholder="End date"
+                    (dateInput)="formatDateEvent($event.target.value, 'end')" />
+
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            </mat-date-range-input>
+
+            <mat-date-range-picker #picker>
+                <mat-date-range-picker-actions>
+                    <span matDateRangePickerApply>
+                        <mat-icon class="relayicon">replay</mat-icon>
+                    </span>
+                    <button mat-button matDateRangePickerCancel class="cancel">Cancel</button>
+                    <button class="apply" mat-button matDateRangePickerApply>Apply</button>
+                </mat-date-range-picker-actions>
+            </mat-date-range-picker>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <p class="hello">Hello, Sharon!</p>
+        </div>
+        <!-- <div class="col-2 d-flex justify-content-evenly">
+            <mat-radio-group name="downloadOption" [(ngModel)]="selectedFormat" (change)="handleRadioChange($event)"
+                [ngModelOptions]="{standalone: true}">
+                <mat-radio-button value="csv" selected>CSV</mat-radio-button>
+                <mat-radio-button value="pdf">PDF</mat-radio-button>
+            </mat-radio-group>
+        </div> -->
+    </div>
+    <!-- <div class="calenderimg1">
+                <img src="../../assets/calender.svg">
+            </div> -->
+
+</form>
+
+<div class="total-loans">
+    <div class="row p-2">
+        <div class="col-xl-3 col-md-6 mb-4" *ngFor="let prop of totalproposal">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters ">
+                        <div class="col mr-2">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{prop.proposalCount}}
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" class="download-pdf">
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1" style="color: #7D848D;font-size: 16px; font-weight: 400;">
+                                {{prop.proposalGroupName}} </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-8">
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="rounded-circle text-center num col-md-4 bg-success">10</div>
+                                    <div class="rounded-circle text-center num col-md-4 bg-warning">9</div>
+                                    <div class="rounded-circle text-center num col-md-4 bg-danger">12</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="float-end mx-auto" style="font-size: 11px; color: #2791E0; font-weight:550; margin-top: 5px; cursor:pointer;">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row p-2">
+        <div class="col-xl-3 col-md-6 mb-4" *ngFor="let item of distributorcount">
+            <div class="card border-left-primary shadow h-30 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters ">
+                        <div class="col mr-2">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{item.distributorsCount}}
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary" (click)="getdata(item)"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="getdata(item)" class="download-pdf">
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1" style="color: #7D848D; font-size: 16px; font-weight: 400;">
+                                {{item.displayStatus}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-2">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-30 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters ">
+                        <div class="col mr-2">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" class="download-pdf">
+
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1" style="color: #7D848D; font-size: 16px; font-weight: 400;">Distributors
+                                Approved</div>
+                        </div>
+                        <!-- <div class="row mt-2">
+                                    <div class="col-md-8">
+                                       <div class="row d-flex me-1 ms-2">
+                                            <div class="rounded-circle text-center num col-md-4 bg-success">10</div>
+                                            <div class="rounded-circle text-center num col-md-4 bg-warning">9</div>
+                                            <div class="rounded-circle text-center num col-md-4 bg-danger">12</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="float-end mx-auto" style="font-size: 11px; color: #2791E0; margin-top: 5px; cursor:pointer;">View More</a>
+                                    </div>
+                                </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-30 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters ">
+                        <div class="col mr-2">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" class="download-pdf">
+
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1" style="color: #7D848D; font-size: 16px; font-weight: 400;">Active
+                                Distributors</div>
+                        </div>
+                        <!-- <div class="row mt-2">
+                                    <div class="col-md-8">
+                                       <div class="row d-flex me-1 ms-2">
+                                            <div class="rounded-circle text-center num col-md-4 bg-success">10</div>
+                                            <div class="rounded-circle text-center num col-md-4 bg-warning">9</div>
+                                            <div class="rounded-circle text-center num col-md-4 bg-danger">12</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="float-end mx-auto" style="font-size: 11px; color: #2791E0;font-weight:550; margin-top: 5px; cursor:pointer;">View More</a>
+                                    </div>
+                                </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-30 py-2">
+                <div class="card-body">
+                    <div class="row text-center p-3">
+                        <!-- <i class="bi bi-cloud-download float-end text-primary inactive-distrbtr"
+                            (click)="navigateToPdfDownload()"> Inactive Distributors</i> -->
+                            <span><img src="../../assets/download-cloud-img.svg"  class="download-cloud-pdf" (click)="navigateToPdfDownload()">Inactive Distributors</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="review-application mb-5">
+    <div class="row">
+        <div class="col-4">
+            <p class="review-distributor">Review distributor applications</p>
+        </div>
+        <div class="col-4">
+            <div class="rounded-circle text-center  col-md-4">12</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="container">
+                <div class="input-groups mb-5 mt-3">
+                    <span class="input-group-text-search"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control border search-distributor"
+                        placeholder="Search for distributors">
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="sorting-flex">
+                <span class="sorting">Sort</span>
+                <img src="../../assets/Sorting-img.svg" class="sort-img">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="applicants-flex ">
+                <div class="row pt-3 applicant-dropdown">
+                    <div class="col-9">
+                        <p class="applicant">Applicants</p>
+                    </div>
+                    <div class="col-3">
+                        <select class="dropdown">
+                            <option>All</option>
+                            <option>Today</option>
+                            <option>Week</option>
+                            <option>Month</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="applicant-dtls-scroll">
+                    <div class="row mt-3 review-flex">
+                        <div class="col-7">
+                            <p class="applicant-name">John Deo</p>
+                            <p class="applicant-dtls">2 hours ago</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="review">Review</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-line">
+                        <hr>
+                    </div>
+                    <div class="row mt-3 review-flex">
+                        <div class="col-7">
+                            <p class="applicant-name">John Deo</p>
+                            <p class="applicant-dtls">2 hours ago</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="review">Review</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-line">
+                        <hr>
+                    </div>
+                    <div class="row mt-3 review-flex">
+                        <div class="col-7">
+                            <p class="applicant-name">John Deo</p>
+                            <p class="applicant-dtls">2 hours ago</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="review">Review</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-line">
+                        <hr>
+                    </div>
+                    <div class="row mt-3 review-flex">
+                        <div class="col-7">
+                            <p class="applicant-name">John Deo</p>
+                            <p class="applicant-dtls">2 hours ago</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="review">Review</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-line">
+                        <hr>
+                    </div>
+                    <div class="row mt-3 review-flex">
+                        <div class="col-7">
+                            <p class="applicant-name">John Deo</p>
+                            <p class="applicant-dtls">2 hours ago</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="review">Review</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-line">
+                        <hr>
+                    </div>
+                    <div class="row mt-3 review-flex">
+                        <div class="col-7">
+                            <p class="applicant-name">John Deo</p>
+                            <p class="applicant-dtls">2 hours ago</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="review">Review</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-line">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="applicant-profile">
+                <div class="applicant-profile-flex">
+                    <p class="profile">Applicant Profile</p>
+                </div>
+                <div>
+                    <img src="../../assets/applicant-profile-img.svg" class="applicant-img">
+                    <p class="profile-review">Please select an applicant profile to review</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

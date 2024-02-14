@@ -1,0 +1,238 @@
+<div class="pending-popup">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="distributor-dtls">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-10 mt-5 distributor-details">
+                        <p class="policyNumber">#015-02020/23</p>
+                        <p class="proposal-num">Proposal Number</p>
+
+                    </div>
+                </div>
+                <div class="horizontal-line">
+                    <hr>
+                </div>
+                <div class="section container">
+                    <p class="personal-details" [class.selected]="proposerDetails" (click)="openProposerDetails()">Proposer Details</p>
+                </div>
+                <div class="horizontal-line">
+                    <hr class="hr-line">
+                </div>
+                <div class="section container mt-2">
+                    <p class="document-upload" [class.selected]="insurerDetails" (click)="openInsurerDetails()">Transaction Details</p>
+                </div>
+                <div class="horizontal-line">
+                    <hr class="hr-line">
+                </div>
+                <div class="section container mt-2">
+                    <p class="document-upload" [class.selected]="doccumentsSection" (click)="openDoccuments()">Lender Bank Details</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8 p-0" *ngIf="proposerDetails">
+            <div class="row mt-5">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <mat-icon class="close-icon" (click)="closePopup()">close</mat-icon>
+                </div>
+            </div>
+       
+            <div class="row ">
+                <div class="col-6 proposer-name">
+                    <p class="main-Field">Proposer Name</p>
+                    <p class="sub-field">John Doe</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Proposal Number</p>
+                    <p class="sub-field">#015-02020/23</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Date of Proposal</p>
+                    <p class="sub-field">12 June 2023</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Policy Tenure</p>
+                    <p class="sub-field">5 years</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Product Category</p>
+                    <p class="sub-field">Life Insurance</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Product Type</p>
+                    <p class="sub-field">Whole Life Insurance</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Policy Amount  (₹)</p>
+                    <p class="sub-field">₹ 10 Lacs</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Premium Amount (₹)</p>
+                    <p class="sub-field">₹xxxxxx</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 p-0" *ngIf="insurerDetails">
+            <div class="row mt-5">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <mat-icon class="close-icon" (click)="closePopup()">close</mat-icon>
+                </div>
+            </div>
+       
+            <div class="row ">
+                <div class="col-6">
+                    <p class="main-Field">Payment Mode</p>
+                    <p class="sub-field">Paytm UPI </p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Total Amount</p>
+                    <p class="sub-field">₹ 13,422.50</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Account ID</p>
+                    <p class="sub-field">9876765 5443210</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Remitter Name</p>
+                    <p class="sub-field">Suresh Arora</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Remitter Account Number</p>
+                    <p class="sub-field">9876765 5443210</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Remitter Name</p>
+                    <p class="sub-field">Suresh Arora</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Remitter IFSC Code</p>
+                    <p class="sub-field">SBIN002334</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Remarks</p>
+                    <p class="sub-field">payment_for_insurance</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Account Balance</p>
+                    <p class="sub-field">₹ 1322.34</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Status</p>
+                    <p class="payment-declined">Payment Declined</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">UTR</p>
+                    <p class="sub-field">1234335558844</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Transaction ID</p>
+                    <p class="sub-field">#123RH433</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Date</p>
+                    <p class="sub-field">12 June 2023</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 p-0" *ngIf="doccumentsSection">
+            <div class="row mt-5">
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <mat-icon class="close-icon" (click)="closePopup()">close</mat-icon>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Lender Name</p>
+                    <p class="sub-field">Muthoot Finance Limited</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Bank Account Number</p>
+                    <p class="sub-field">12343442112</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p class="main-Field">Bank IFSC Code</p>
+                    <p class="sub-field">SBIN002334</p>
+                </div>
+                <div class="col-6">
+                    <p class="main-Field">Bank Address</p>
+                    <p class="sub-field">Muthoot Finance, Worli Sea Link 
+                        Branch, Mumbai, Maharashtra, 132334</p>
+                </div>
+            </div>
+            <div class="row kyc-footer ">
+                <div class="col-6  ">
+                    <button class="rejected-btn" (click)="onReject('proposalCancel')">Cancel</button>
+                </div>
+                <div class="col-6">
+                    <button class="approved-btn" (click)="onApproval('proposalLender')">Refund to Lender</button>
+                </div>
+            </div>
+          
+
+
+            <!-- <div *ngIf="isComment">
+                <div class="row mt-3">
+                    <div class="col-10 details-flex">
+                        <p class="kyc-details">Comments</p>
+                    </div>
+                    <div class="col-2">
+                        <mat-icon class="" (click)="closePopup()">close</mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <hr class="kyc-details-hr-line">
+                </div>
+                <div class="row">
+                   <div class="col-11">
+                        <div>
+                            <p class="add-comments">Add Comments</p>
+                        </div>
+                        <div class="mt-5">
+                            <p>Please mention <b>Comments</b> if any.</p>
+                            <textarea class="enter-comment" cols="70" rows="5" placeholder="Enter Comments" [(ngModel)]="commnt"></textarea>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <button class="btn btn-outline-primary cancel-btn">Cancel</button>
+                            </div>
+                            <div class="col-8">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="col-1">
+
+                   </div>
+                </div>
+
+            </div> -->
+          
+        </div>
+    </div>
+</div>
+
+

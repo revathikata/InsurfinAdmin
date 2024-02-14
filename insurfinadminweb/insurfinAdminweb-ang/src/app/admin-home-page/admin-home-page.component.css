@@ -1,0 +1,331 @@
+mat-sidenav {
+  width: 5rem;
+  border-right: none;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.content {
+  height: calc(100vh - 98px);
+  height: 100vh;
+  border-radius: 10px;
+  padding: 10px;
+  background: #F8FCFF;
+}
+
+mat-sidenav-container {
+  background-color: #F8FCFF;
+  height: calc(100vh - 65px);
+  height: 100vh;
+}
+
+.num {
+  border-radius: 100% !important;
+  transform: scale(0.65);
+  padding: 9px;
+  font-style: 10px;
+  margin-left: -25px;
+  cursor: pointer;
+  /* font-size : clamp(1rem, 10vw, 5rem); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.total-loans {
+  overflow-x: hidden;
+}
+
+.hello {
+  font-weight: 700;
+  font-size: 30px;
+  color: #005AAA;
+  margin-left: 20px;
+  margin-top: -26px;
+}
+
+.search-bar {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.ms-n5 {
+  margin-left: -40px;
+}
+
+.search-icon {
+  box-shadow: none !important;
+}
+
+.input-group {
+  width: 465px;
+  height: 42px;
+  border-radius: 16px;
+}
+
+.input::placeholder {
+  color: #7D848D;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.calender-dropdown {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 215px;
+}
+
+.datepicker {
+  margin-left: 400px;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel {
+  margin-top: 10px;
+  background: white;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 163px;
+  margin-left: -24px;
+
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid rgb(236, 228, 228);
+  padding: 6px;
+  color: black;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:hover {
+  color: #005AAA;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .scroll-host {
+  padding: 0;
+}
+
+
+::ng-deep.selectDate.ng-select {
+  border: #C6C6C6 1.5px solid;
+  height: 36px !important;
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+  margin-left: 53px;
+  /* margin-top: 25px; */
+  width: 80% !important;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  color: #005AAA;
+
+}
+
+::ng-deep.ng-select div,
+.ng-select input,
+.ng-select span {
+  box-sizing: border-box;
+  padding-left: 6px;
+}
+
+.ng-select.selectDate::ng-deep .ng-arrow {
+  display: none;
+
+}
+
+.ng-select.selectDate::ng-deep .ng-arrow-wrapper {
+  width: 27px;
+  background-image: url('../../assets/CaretDownarrow.svg');
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  margin-top: -5px;
+
+}
+
+.inactive-distrbtr {
+  cursor: pointer;
+}
+
+.ng-select-opened.selectDate ::ng-deep .ng-arrow-wrapper {
+  background-image: url('../../assets/Caretuparrow.svg');
+  color:
+    #005AAA !important;
+
+}
+
+::ng-deep.selectDate.ng-select.selectDate .ng-has-value .ng-placeholder {
+  display: none;
+}
+
+
+.review-distributor {
+  font-size: 24px;
+  font-weight: 700;
+  color: #041427;
+  margin-left: 12px;
+  /* overflow-x: hidden; */
+}
+.rounded-circle{
+  border-radius: 50% !important;
+  width: 46px;
+  height: 36px;
+  padding: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #C52727;
+  color: #FFFFFF;
+}
+.input-groups {
+  position: relative;
+  display: flex;
+  width: 100%;
+  outline: none;
+  
+  box-shadow: none !important;
+}
+.search-distributor{
+  width: 275px;
+  border: 1px solid #C9DCEE;
+    border-radius: 20px;
+    padding-left: 30px;
+    background: #F8FCFF
+
+}
+
+.input-group-text-search {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.sorting-flex{
+  border: 1px solid #C9DCEE;
+  width: 74px;
+  height: 37px;
+  border-radius: 20px;
+  padding-top: 6px;
+  background: #F8FCFF;
+  margin-top: 6%;
+
+}
+.sorting{
+  font-size: 14px;
+  font-weight: 700;
+  color: #041427;
+  padding: 3px;
+  padding-left: 10px;
+}
+.sort-img{
+  margin-left: 3px;
+}
+.applicants-flex{
+  border: 1px solid black;
+  Width: 342px;
+  Height: 550px;
+  border-radius: 10px;
+  margin-left: 20px;
+  background: #FFFFFF;
+}
+.dropdown{
+  border-radius: 20px;
+  height: 25px;
+  width: 42px;
+}
+.applicant{
+  font-size: 16px;
+  font-weight: 700;
+  color: #041427;
+  margin-left: 25px;
+}
+.applicant-dropdown{
+  height: 65px;
+  width: 340px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #F6F6F6;
+  margin-left: 0px;
+}
+.applicant-name{
+  font-size:16px;
+  font-weight: 400;
+  color:#3A3A49;
+}
+.applicant-dtls{
+  font-size: 14px;
+  font-weight: 400;
+  color: #7D848D;
+  margin-top: -11px;
+}
+.review-flex{
+  margin-left: 25px;
+}
+.review{
+  font-size: 14px;
+  font-weight: 700;
+  color: #2791E0;
+  margin-top: 7px;
+  margin-left: 34px;
+  cursor: pointer;
+}
+.horizontal-line{
+  margin-top: -12px;
+}
+.applicant-dtls-scroll{
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+  /* height: 500px; */
+}
+.review-application{
+  overflow-x: hidden;
+}
+.applicant-profile{
+  border: 1px solid black;
+  width: 770px;
+  height:550px ;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+}
+.applicant-profile-flex{
+  height: 65px;
+  width: 768px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #F6F6F6;
+  margin-left: 0px;
+}
+.profile{
+  font-size: 16px;
+  font-weight: 700;
+  color: #041427;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+.applicant-img{
+  margin-left: 14%;
+  margin-top: 11%;
+  width: 500px;
+  height: 250px;
+}
+.profile-review{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7D848D;
+}
+.download-pdf{
+  margin-left: 30px;
+  width: 18px;
+  cursor: pointer;
+}
+.download-cloud-pdf{
+  margin-left: -10px;
+  width: 18px;
+  cursor: pointer;
+  color: #7D848D;
+  font-size: 18px;
+  font-weight: 400;
+}

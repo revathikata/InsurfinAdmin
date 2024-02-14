@@ -1,0 +1,21 @@
+.sortBy {
+    color: var(--greys-primary-text, #041427);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+ ::ng-deep.mat-mdc-dialog-container .mdc-dialog__surface {
+    overflow-y: hidden;
+    display: inline;
+    height: 222px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px !important;
+    background: var(--greys-white, #FFF);
+    box-shadow: 0px 0px 5px 0px rgba(77, 127, 174, 0.20);
+    position: relative;
+    left:177%;
+    top:50%;
+}

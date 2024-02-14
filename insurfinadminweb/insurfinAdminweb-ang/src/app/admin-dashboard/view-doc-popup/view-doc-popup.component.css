@@ -1,0 +1,36 @@
+
+.aprrovedocument{
+    overflow-x: hidden;
+}
+.approveTable{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #005AAA;
+}
+.approveTable tr{
+    border-bottom: 1px solid #005AAA;
+}
+.approveTable td, th{
+    padding: 2px 10px;
+}
+.Adhar, .pan, .bank{
+    border-right: 1px solid #005AAA;
+    height: 5   00px;
+    border-bottom: 1px solid #005AAA;
+}
+.adharImg{
+    width: 250px;
+    height: 230px;
+    padding: 10px;
+}
+.NameCl{
+    color: #005AAA;
+   padding-left: 10px;
+    }
+    .close-icon{
+        left: 97%;
+        position: relative;
+        font-weight: 600;
+        /* top:-12px; */
+        cursor: pointer;
+    }

@@ -1,0 +1,183 @@
+<div class="admin-my-profile">
+    <div class="row">
+        <div class="col-4">
+            <div *ngIf="adminProfile">
+                <div class="container mt-5">
+                    <p class="my-profile">My profile</p>
+                </div>
+                <div class="admin-profile mt-5 mb-5">
+                    <div class="row">
+                        <div class="col-8 mt-3">
+                            <img src="../../../assets/profile pic -img.png" class="admin-img">
+                            <img src="../../../assets/edit-pencil-img.svg" (click)="editAdminProfile()"
+                                class="edit-pencil" *ngIf="isEdit">
+                            <img src="../../../assets/disable-edit-pencil-img.svg" class="disable-edit-pencil"
+                                *ngIf="!isEdit">
+                        </div>
+                        <div class="col-4 admin-logo" (click)="ownerAdminProfile()">
+                            <img src="../../../assets/admin-logo-img.svg">
+                            <span class="admin">Admin</span>
+                        </div>
+                    </div>
+                    <div class="row section mt-3">
+                        <div class="col-9">
+                            <p class="admin-name">Name</p>
+                            <p class="admin-dtls">Sharon Dixit</p>
+                        </div>
+                        <div class="col-3">
+                            <img src="../../../assets/edit-pencil-img.svg" class="pencil-edit">
+                        </div>
+                    </div>
+                    <div class="row section mt-3">
+                        <div class="col-9">
+                            <p class="admin-name">Email ID</p>
+                            <p class="admin-dtls">sharondixit1234@gmail.com</p>
+                        </div>
+                        <div class="col-3">
+                            <img src="../../../assets/edit-pencil-img.svg" class="pencil-edit">
+                        </div>
+                    </div>
+                    <div class="row section mt-3">
+                        <div class="col-9">
+                            <p class="admin-name">Role</p>
+                            <p class="admin-dtls">Owner</p>
+                        </div>
+                        <div class="col-3">
+                            <img src="../../../assets/edit-pencil-img.svg" class="pencil-edit">
+                        </div>
+                    </div>
+                    <div class="row section mt-3">
+                        <div class="col-9">
+                            <p class="admin-name">Password</p>
+                            <p class="admin-dtls">**************</p>
+                        </div>
+                        <div class="col-3">
+                            <img src="../../../assets/edit-pencil-img.svg" (click)="editPassword()" class="pencil-edit">
+                        </div>
+                    </div>
+                    <div class="logout-flex">
+                        <img src="../../../assets/SignOut-img.svg">
+                        <span class="logout">Log Out</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-8 mb-5">
+            <div *ngIf="!isEdit" class="edit-profile">
+                <div *ngIf="isProfileEdit">
+                    <div class="admin-profile-edit">
+                        <p class="profile-edit">Edit Profile</p>
+                        <p class="profile-picture">Profile Picture</p>
+                    </div>
+                    <div class="picture-upload mt-3">
+                        <img src="../../../assets/gallery-img.svg" class="gallery-img">
+                        <p class="drag-drop">Drag and drop an image or</p>
+                        <div class="upload-img">
+                            <img src="../../../assets/upload-cloud-img.svg" style="margin-top: -4px;">
+                            <span class="upload">Upload</span>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        <p class="profile-name">Name</p>
+                        <input type="text" placeholder="Sharon Dixit" class="form-control edit-profile-dtls">
+                    </div>
+                    <div class="profile-details">
+                        <p class="profile-name">Email</p>
+                        <input type="text" placeholder="sharondixit1234@gmail.com"
+                            class="form-control edit-profile-dtls">
+                    </div>
+                    <div class="row update-cancel-btn">
+                        <div class="col-6">
+                            <button class="btn btn-outline-primary cancel-btn">Cancel</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary update-btn">Update</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-profile-edit" *ngIf="!isProfileEdit">
+                    <p class="profile-edit">Update Password</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="ownerProfile">
+    <div class="container mt-5">
+        <p class="my-profile">Owner profile</p>
+    </div>
+    <div class="owner-profile mt-5 mb-5">
+        <div class="row">
+            <div class="col-8 mt-3">
+                <img src="../../../assets/profile pic -img.png" class="admin-img">
+                <img src="../../../assets/edit-pencil-img.svg" class="edit-pencil">
+            </div>
+        </div>
+        <div class="row section mt-3">
+            <div class="col-9">
+                <p class="admin-name">Name</p>
+                <p class="admin-dtls">Sharon Dixit</p>
+            </div>
+            <div class="col-3">
+                <img src="../../../assets/edit-pencil-img.svg" class="pencil-edit">
+            </div>
+        </div>
+        <div class="row section mt-3">
+            <div class="col-9">
+                <p class="admin-name">Email ID</p>
+                <p class="admin-dtls">sharondixit1234@gmail.com</p>
+            </div>
+            <div class="col-3">
+                <img src="../../../assets/edit-pencil-img.svg" class="pencil-edit">
+            </div>
+        </div>
+        <div class="row section mt-3">
+            <div class="col-9">
+                <p class="admin-name">Role</p>
+                <p class="admin-dtls">Owner</p>
+            </div>
+            <div class="col-3">
+                <img src="../../../assets/edit-pencil-img.svg" class="pencil-edit">
+            </div>
+        </div>
+        <div class="horizontal-line">
+            <hr>
+        </div>
+        <div class="row section mt-3">
+            <div class="col-9">
+                <p class="admin-name">Password</p>
+                <p class="admin-dtls">**************</p>
+            </div>
+            <div class="col-3">
+                <img src="../../../assets/edit-pencil-img.svg" class="pencil-edit">
+            </div>
+        </div>
+        <div class="horizontal-line">
+            <hr>
+        </div>
+        <div class="row section mt-3">
+            <div class="col-9">
+                <p class="admin-name">Invites</p>
+                <p class="admin-dtls">Pending: <b style="color:#E59510;">2</b></p>
+                <p class="admin-dtls">Joined: <b style="color:#48B16E;">2</b></p>
+            </div>
+            <div class="col-3">
+                <img src="../../../assets/eye-img.svg" class="eye-icon">
+            </div>
+        </div>
+        <div class="invite-flex mt-3">
+            <img src="../../../assets/link-img.svg">
+            <span class="invite-user">Invite User</span>
+        </div>
+        <div class="signout-flex">
+            <img src="../../../assets/SignOut-img.svg">
+            <span class="logout">Log Out</span>
+        </div>
+
+    </div>
+
+</div>

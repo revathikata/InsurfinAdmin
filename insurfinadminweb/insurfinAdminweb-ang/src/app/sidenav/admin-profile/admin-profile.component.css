@@ -1,0 +1,226 @@
+.my-profile {
+    font-size: 40px;
+    font-weight: 700;
+    color: #005AAA;
+    margin-left: 15px;
+    width: 100%;
+}
+
+.admin-profile {
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
+    width: 342px;
+    height: 780px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    background: #FFFFFF;
+    margin-left: 25px;
+}
+.admin-my-profile{
+    overflow-x: hidden;
+}
+.owner-profile {
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
+    width: 342px;
+    height: 780px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    background: #FFFFFF;
+    margin-left: 25px;
+}
+
+.admin-img {
+    width: 84px;
+    height: 84px;
+    margin-left: 35px;
+}
+
+.edit-pencil {
+    margin-left: 4px;
+    margin-top: 52px;
+    cursor: pointer;
+}
+.disable-edit-pencil{
+    margin-left: 4px;
+    margin-top: 52px;
+    cursor: not-allowed;
+}
+
+.admin {
+    font-size: 16px;
+    font-weight: 400;
+    color: #7D848D;
+}
+.admin-logo{
+    margin-top: 25px;
+    cursor: pointer;
+}
+.admin-name{
+    font-size: 12px;
+    font-weight: 700;
+    color: #7D848D;
+}
+.admin-dtls{
+    font-weight: 700;
+    font-size: 12px;
+    color: #041427;
+    margin-top: -10px;
+    content-visibility: auto;
+}
+.section{
+    margin-left: 35px;
+}
+.pencil-edit{
+    margin-top: 20px;
+}
+.logout-flex{
+    border: 1px solid #C9DCEE;
+    width: 112px;
+    height: 32px;
+    border-radius: 20px;
+    margin-left: 33%;
+    margin-top: 80%;
+    padding-top: 5px;
+    padding-left: 15px;
+}
+.logout{
+    font-size: 14px;
+    font-weight: 700;
+    color: #041427;
+    margin-left: 5px;
+}
+.horizontal-line{
+    width: 282px;
+    margin-top: -10px;
+    margin-left: 33px;
+}
+.eye-icon{
+    margin-top: -6px;
+    margin-left: 2px;
+}
+.signout-flex{
+    border: 1px solid #C9DCEE;
+    width: 112px;
+    height: 32px;
+    border-radius: 20px;
+    margin-left: 33%;
+    margin-top: 33%;
+    padding-top: 5px;
+    padding-left: 15px;
+}
+.invite-flex{
+    text-align: center;
+}
+.invite-user{
+    font-size:14px;
+    font-weight: 700;
+    color:#2791E0;
+}
+.edit-profile{
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
+    width: 750px;
+    height: 780px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    background: #FFFFFF;
+    margin-top: 15%;
+}
+.profile-edit{
+    font-size: 24px;
+    font-weight: 700;
+    color: #041427;
+}
+.admin-profile-edit{
+    margin-top: 4%;
+    margin-left: 20px;
+   
+}
+.profile-picture{
+    font-size: 12px;
+    font-weight: 700;
+    color: #7D848D;
+    margin-top: 20px;
+}
+.picture-upload{
+    border: 2px dashed #C6C6C6;
+    width: 345px;
+    height: 198px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+.gallery-img{
+    margin-left: 43%;
+    margin-top: 10%;
+}
+.drag-drop{
+    text-align: center;
+    font-size:12px ;
+    font-weight:400 ;
+    color:#7D848D ;
+    margin-top: 16px;
+}
+.upload-img{
+    border: 1px solid #C9DCEE;
+    width: 112px;
+    height: 32px;
+    border-radius: 20px;
+    margin-left: 33%;
+    padding-top: 5px;
+    padding-left: 15px;
+}
+.upload{
+    font-size: 14px;
+    font-weight: 700;
+    color:#7D848D;
+    margin-left: 6px;
+}
+.edit-profile-dtls{
+    width: 345px;
+    height: 46px;
+    border-radius: 12px;
+    outline: none;
+  box-shadow: none !important;
+  margin-top: -5px;
+}
+.profile-details{
+    margin-left: 22px;
+    margin-top: 23px;
+}
+.profile-name{
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #7D848D;
+}
+.cancel-btn{
+    width: 300px;
+    margin-left: 12px;
+    color: #005AAA;
+    border-radius: 12px;
+    box-shadow: inset 0px 0px 10px 6px rgba(0, 90, 170, 0.02);
+    background-color: #ffffff !important;
+    border: 1px solid #005AAA;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+.update-btn{
+    width: 300px;
+    margin-left: 13px;
+    background: #005AAA;
+    box-shadow: inset 0px 0px 10px 6px rgba(0, 90, 170, 0.02);
+    border-radius: 12px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+.update-cancel-btn{
+    margin: 9%;
+    margin-top: 20%;
+}
+
+
+

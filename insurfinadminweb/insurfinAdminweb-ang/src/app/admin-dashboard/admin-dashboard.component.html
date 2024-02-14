@@ -1,0 +1,721 @@
+
+<div class="main-dashboard">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-10">
+                <h2 class="userName">Hello, Sharon!</h2>
+            </div>
+            <div class="col-2">
+                <div>
+                    <ng-select class="selectDate" [items]="dropdown" [clearable]="false" [searchable]="false"
+                        placeholder="This week" (change)="onDropdownChange()" [(ngModel)]="selectedOption" bindLabel=""
+                        bindValue="">
+                        <ng-template ng-option-tmp let-item="item" class="option">{{item}}
+                            <span *ngIf="selectedOption === item" class="checkmark"><mat-icon
+                                    class="maticonclass">check_circle</mat-icon></span>
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div *ngIf="selectedOption === 'Custom'" class="daterangec">
+                    <p class="datetag">{{ getFormattedDateRange() }}</p>
+                    <!-- at-label>Enter a date range</mat-label> -->
+
+                    <mat-date-range-input [formGroup]="range" [rangePicker]="picker" class="no-touch">
+                        <input matStartDate formControlName="start" required placeholder="Start date"
+                            (dateInput)="formatDateEvent($event.target.value, 'start')" />
+
+                        <input matEndDate formControlName="end" required placeholder="End date"
+                            (dateInput)="formatDateEvent($event.target.value, 'end')" />
+
+                    </mat-date-range-input>
+
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+                    <!-- <p class="datetag">{{ getFormattedDateRange() }}</p> -->
+                    <mat-date-range-picker #picker>
+
+                        <mat-date-range-picker-actions>
+                            <span matDateRangePickerApply><mat-icon class="relayicon"
+                                    (click)="cancel()">replay</mat-icon></span>
+                            <button mat-button matDateRangePickerCancel class="cancel"
+                                (click)="cancel()">Cancel</button>
+                            <button class="apply" matDateRangePickerApply>Apply</button>
+                        </mat-date-range-picker-actions>
+
+                    </mat-date-range-picker>
+
+                    <!-- Custom date picker component -->
+
+                </div>
+            </div>
+        </div>
+        <h2 class="headerrr" *ngIf="totalmainView">Distributor reports</h2>
+        <div class="row mt-3">
+            <div class="col">
+                <mat-card class="distributorReportcard">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{distributorAllcount}}
+                                    <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                    <span style="font-size: 12px;" class=" text-success"><i
+                                            class="bi bi-plus text-success"></i>10%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                <img src="../../assets/download-cloud-img.svg" (click)="distributordownloadExcel()" class="download-pdf">
+
+                            </div>
+                        </div>
+                        <div class="text-xs font-weight-bold mb-1 mt-1"
+                            style="color: #7D848D; font-size: 16px; font-weight: 400;">Distributor reports</div>
+                        <div class="row mt-2" *ngIf="viewMore">
+                            <div class="col-md-7">
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-green">
+                                        <div class="duss">{{distributorApprovedcount}}</div>
+                                    </div>
+                                    <div class="bg-yellow">
+                                        <div class="duss">{{distributorPendingcount}}</div>
+                                    </div>
+                                    <div class="bg-red">
+                                        <div class="duss">{{distributorRejectedcount}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <a class="float-end mx-auto"
+                                    style="font-size: 11px; color: #2791E0;font-weight:550; margin-top: 5px; cursor:pointer;"  (click)="onViewMore()">View
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2" *ngIf="viewLess">
+                            <div class="col-md-7">
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-green">
+                                        <div class="duss">{{distributorApprovedcount}}</div><span class="approved">Approved</span>
+                                    </div>
+                                </div><br>
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-yellow">
+                                        <div class="duss">{{distributorPendingcount}}</div><span class="approved">Pending</span>
+                                    </div>
+                                </div><br>
+                                <div class="row  me-1 ms-2">
+                                    <div class="bg-red ">
+                                        <div class="duss">{{distributorRejectedcount}}</div><span class="approved">Rejected</span><a style="font-size: 11px; color: #2791E0;font-weight:550; margin-top: 5px;margin-left: 80px; cursor:pointer;" (click)="onViewLess()">ViewLess</a>
+                                       
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col">
+                <mat-card class="distributorReportcard">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                    <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                    <span style="font-size: 12px;" class=" text-success"><i
+                                            class="bi bi-plus text-success"></i>10%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+
+                            </div>
+                        </div>
+                        <div class="text-xs font-weight-bold mb-1 mt-1"
+                            style="color: #7D848D; font-size: 16px; font-weight: 400;">Customer reports</div>
+                        <div class="row mt-2">
+                            <div class="col-md-7">
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-grey">
+                                        <div class="duss">10</div>
+                                    </div>
+                                    <div class="bg-blue">
+                                        <div class="duss">9</div>
+                                    </div>
+                                    <!-- <div class="rounded-circle text-center num col-md-4 bg-danger">12</div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <a class="float-end mx-auto"
+                                    style="font-size: 11px; color: #2791E0;font-weight:550; margin-top: 5px; cursor:pointer;">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+         
+            <div class="col">
+                <mat-card class="distributorReportcard">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                    <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                    <span style="font-size: 12px;" class=" text-success"><i
+                                            class="bi bi-plus text-success"></i>10%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                <img src="../../assets/download-cloud-img.svg" (click)="ProposalDownloadExcel()" class="download-pdf">
+
+                            </div>
+                        </div>
+                        <div class="text-xs font-weight-bold mb-1 mt-1"
+                            style="color: #7D848D; font-size: 16px; font-weight: 400;">Proposal reports</div>
+                         <div class="row mt-2" *ngIf="viewMoreDetails">
+                            <div class="col-md-7">
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-green">
+                                        <div class="duss">10</div>
+                                    </div>
+                                    <div class="bg-yellow">
+                                        <div class="duss">9</div>
+                                    </div>
+                                    <div class="bg-red">
+                                        <div class="duss">12</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <a class="float-end mx-auto"
+                                    style="font-size: 11px; color: #2791E0;font-weight:550; margin-top: 5px; cursor:pointer;"  (click)="onViewMoree()">View
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2" *ngIf="viewLessDetails">
+                            <div class="col-md-7">
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-green">
+                                        <div class="duss">10</div><span class="approved">Approved</span>
+                                    </div>
+                                </div><br>
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-yellow">
+                                        <div class="duss">9</div><span class="approved">Pending</span>
+                                    </div>
+                                </div><br>
+                                <div class="row  me-1 ms-2">
+                                    <div class="bg-red ">
+                                        <div class="duss">12</div><span class="approved">Rejected</span><a style="font-size: 11px; color: #2791E0;font-weight:550; margin-top: 5px;margin-left: 80px; cursor:pointer;" (click)="onViewLesss()">ViewLess</a>
+                                       
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          
+            <div class="col">
+                <mat-card class="distributorReportcard">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                    <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                    <span style="font-size: 12px;" class=" text-success"><i
+                                            class="bi bi-plus text-success"></i>10%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                <img src="../../assets/download-cloud-img.svg"  (click)="totalLoanDownloadExcel()" class="download-pdf">
+
+                            </div>
+                        </div>
+                        <div class="text-xs font-weight-bold mb-1 mt-1"
+                            style="color: #7D848D; font-size: 16px; font-weight: 400;">Loan reports</div>
+                        <div class="row mt-2">
+                            <div class="col-md-7">
+                                <div class="row d-flex me-1 ms-2">
+                                    <div class="bg-grey">
+                                        <div class="duss">10</div>
+                                    </div>
+                                    <div class="bg-blue">
+                                        <div class="duss">9</div>
+                                    </div>
+                                    <!-- <div class="rounded-circle text-center num col-md-4 bg-danger">12</div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <a class="float-end mx-auto"
+                                    style="font-size: 11px; color: #2791E0;font-weight:550; margin-top: 5px; cursor:pointer;">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col" *ngIf="!mainView && !totalmainView">
+                <mat-card class="viewMore">
+                    <mat-card-content><span (click)="onViewMoreLink()">view more <span><i
+                                    class="bi bi-arrow-down-short text-primary"></i></span></span> </mat-card-content>
+                </mat-card>
+            </div>
+
+        </div>
+
+<!-- addedwork -->
+<h2  class="headerrr mt-1" *ngIf="totalmainView">Customer reports</h2>
+        <div *ngIf="mainView || totalmainView" class="mt-3">
+            <div class="row">
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg"  (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">All Distributors</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-down-short text-danger"></i></span>
+                                        <span style="font-size: 12px;" class=" text-danger"><i
+                                                class="bi bi-plus text-danger"></i>-10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Distributors Onboarded</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Pending applications</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-down-short text-danger"></i></span>
+                                        <span style="font-size: 12px;" class=" text-danger"><i
+                                                class="bi bi-plus text-danger"></i>-10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()"  class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Distributors Rejected</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col" *ngIf="mainView">
+                    <mat-card class="viewMore">
+                        <mat-card-content><span (click)="onviewAll()">view All <span><i
+                                        class="bi bi-arrow-down-short text-primary"></i></span></span> </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        <h2  class="headerrr mt-1" *ngIf="totalmainView">Proposal reports</h2>
+        <div *ngIf="totalmainView" class="mt-3">
+            <div class="row">
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-down-short text-daner"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-danger"></i>-10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Distributors Approved</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-down-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-danger"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Active Distributors</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Inactive Distributors</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-down-short text-danger"></i></span>
+                                        <span style="font-size: 12px;" class=" text-danger"><i
+                                                class="bi bi-plus text-danger"></i>-10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Total Insurance Products</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="headerrr mt-1" *ngIf="totalmainView">Loan reports</h2>
+        <div *ngIf="totalmainView" class="mt-3">
+            <div class="row">
+                <div class="col-3">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-up-short text-success"></i></span>
+                                        <span style="font-size: 12px;" class=" text-success"><i
+                                                class="bi bi-plus text-success"></i>10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Total Escrow Transactions</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col-3">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">26
+                                        <span class="ml-2"><i class="bi bi-arrow-down-short text-danger"></i></span>
+                                        <span style="font-size: 12px;" class=" text-danger"><i
+                                                class="bi bi-plus text-danger"></i>-10%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <!-- <i class="bi bi-cloud-download float-end text-primary"></i> -->
+                                    <img src="../../assets/download-cloud-img.svg" (click)="customerdownloadExcel()" class="download-pdf">
+    
+                                </div>
+                            </div>
+                            <div class="text-xs font-weight-bold mb-1 mt-1"
+                                style="color: #7D848D; font-size: 16px; font-weight: 400;">Total Revenue Generated</div>
+                            <div class="row mt-2">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="col-3">
+                    <mat-card class="distributorReportcard">
+                        <mat-card-content>
+                           <img (click)="customerdownloadExcel()" src="../../assets/download-cloud-img.svg"><p style="color:#2791E0">Download all report</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                
+            </div>
+        </div>
+
+       <div  class="header" *ngIf="!totalmainView">
+        <div class="container mt-3">
+            <p class="customersHead">All Applications</p>
+        </div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="mat-button">
+                    <mat-button-toggle value="bold" class="mat-button-toggle"
+                        (click)="onPending()">Pending</mat-button-toggle>
+                    <mat-button-toggle value="italic" class="mat-button-toggle"
+                        (click)="onApprove()">Approved</mat-button-toggle>
+                    <mat-button-toggle value="underline" class="mat-button-toggle"
+                        (click)="onReject()">Rejected</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="col-7"></div>
+            <div class="col-1">
+                <div class="">
+                    <span class="sorting" (click)="OpenSorting()">sort <img src="../../assets/Sorting-img.svg"></span>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="row mt-3">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+                  <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+                  <td mat-cell *matCellDef="let emp">{{ emp[column] }}</td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
+            </table>
+        </div> -->
+
+        <!-- Your component's HTML file -->
+        <div class="details-list-Scrolling mt-3" >
+            <div  *ngIf="isPending" class="row mt-3 mb-5" style="max-height: 300px;border-radius:16px;border-bottom:1px solid #F6F6F6; overflow: auto;">
+                <table mat-table [dataSource]="pendingTableList" class="mat-elevation-z8 table-list">
+                    <ng-container matColumnDef="Name">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element">{{element.name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Joined on">
+                        <th mat-header-cell *matHeaderCellDef>Joined On</th>
+                        <td mat-cell *matCellDef="let element">{{element.Joinedon}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Aadhar Details">
+                        <th mat-header-cell *matHeaderCellDef>Aadhaar Details</th>
+                        <td mat-cell *matCellDef="let element">{{element.aadhaarNumber}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="PAN Details">
+                        <th mat-header-cell *matHeaderCellDef>PAN Details</th>
+                        <td mat-cell *matCellDef="let element">{{element.panNumber}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Status">
+                        <th mat-header-cell *matHeaderCellDef>Status</th>
+                        <td mat-cell *matCellDef="let element">{{element.distributorOnBoardingStatus === 'APPROVAL_PENDING' ? 'Pending' :  element.distributorOnBoardingStatus}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Actions">
+                        <th mat-header-cell *matHeaderCellDef>Actions</th>
+                        <td mat-cell *matCellDef="let element">
+                            <p (click)="handleActionClick(element,'pendingView')" class="review">Review
+                            </p></td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"
+                   ></tr>
+
+                    <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr> -->
+
+
+                    <!-- <td mat-cell *matCellDef="let emp" [ngStyle]="getStatusCellStyles(emp.Status)">{{ emp.Status }}</td> -->
+
+                </table>
+            </div>
+
+            <div *ngIf="isApproved" class="row mt-2" style="max-height: 300px;border-radius:16px;border-bottom:1px solid #F6F6F6; overflow: auto;">
+                <!-- <table mat-table [dataSource]="approvedDatasource" class="mat-elevation-z8">
+                    <ng-container [matColumnDef]="column" *ngFor="let column of displayedaApprovedColumns">
+                        <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+                        <td mat-cell *matCellDef="let emp"
+                            [ngClass]="{'Doccumentation-column': column === 'Doccumentation'}">
+                            <span [ngClass]="{'accept-status-column': column === 'Status'}">{{ emp[column] }}</span>
+                        </td>
+                    </ng-container>
+    
+                    <tr mat-header-row *matHeaderRowDef="displayedaApprovedColumns"></tr>
+                    <tr mat-row *matRowDef="let emprow; columns: displayedaApprovedColumns"></tr>
+                </table> -->
+                <table mat-table [dataSource]="ApprovedTableList" class="mat-elevation-z8 table-list">
+                    <ng-container matColumnDef="Name">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element">{{element.name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Joined on">
+                        <th mat-header-cell *matHeaderCellDef>Joined On</th>
+                        <td mat-cell *matCellDef="let element">{{element.Joinedon}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Aadhar Details">
+                        <th mat-header-cell *matHeaderCellDef>Aadhaar Details</th>
+                        <td mat-cell *matCellDef="let element">{{element.aadhaarNumber}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="PAN Details">
+                        <th mat-header-cell *matHeaderCellDef>PAN Details</th>
+                        <td mat-cell *matCellDef="let element">{{element.panNumber}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Status">
+                        <th mat-header-cell *matHeaderCellDef>Status</th>
+                        <td mat-cell *matCellDef="let element">Approved</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Actions">
+                        <th mat-header-cell *matHeaderCellDef>Actions</th>
+                        <td mat-cell *matCellDef="let element"> <span ></span>
+                            <p (click)="handleActionClick(element, 'ApprovedView')" class="review">view
+                            </p></td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"
+                   ></tr>
+                </table>
+            </div>
+    
+            <div *ngIf="isRejected" class="row mt-2" style="max-height: 300px; border-radius:16px;border-bottom:1px solid #F6F6F6; overflow: auto;">
+                <!-- <table mat-table [dataSource]="rejectedDatasource" class="mat-elevation-z8">
+                    <ng-container [matColumnDef]="column" *ngFor="let column of displayedRejectedColumns">
+                        <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+                        <td mat-cell *matCellDef="let emp"
+                            [ngClass]="{'Doccumentation-column': column === 'Doccumentation'}">
+                            <span [ngClass]="{'Status-column': column === 'Status'}">{{ emp[column] }}</span>
+                        </td>
+                    </ng-container>
+    
+                    <tr mat-header-row *matHeaderRowDef="displayedRejectedColumns"></tr>
+                    <tr mat-row *matRowDef="let emprow; columns: displayedRejectedColumns"></tr>
+                </table> -->
+                <table mat-table [dataSource]="RejectedTableList" class="mat-elevation-z8 table-list">
+                    <ng-container matColumnDef="Name">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element">{{element.name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Joined on">
+                        <th mat-header-cell *matHeaderCellDef>Joined On</th>
+                        <td mat-cell *matCellDef="let element">{{element.Joinedon}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Aadhar Details">
+                        <th mat-header-cell *matHeaderCellDef>Aadhaar Details</th>
+                        <td mat-cell *matCellDef="let element">{{element.aadhaarNumber}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="PAN Details">
+                        <th mat-header-cell *matHeaderCellDef>PAN Details</th>
+                        <td mat-cell *matCellDef="let element">{{element.panNumber}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Status">
+                        <th mat-header-cell *matHeaderCellDef>Status</th>
+                        <td mat-cell *matCellDef="let element">{{element.distributorOnBoardingStatus === 'APPROVAL_REJECTED' ? 'Rejected' :  element.distributorOnBoardingStatus}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Actions">
+                        <th mat-header-cell *matHeaderCellDef>Actions</th>
+                        <td mat-cell *matCellDef="let element"> <span ></span>
+                            <p>view
+                            </p></td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"
+                   ></tr>
+                </table>
+            </div>
+        </div>
+       </div>
+
+       
+
+    </div>

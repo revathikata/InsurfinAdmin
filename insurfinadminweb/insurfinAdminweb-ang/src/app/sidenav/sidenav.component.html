@@ -1,0 +1,62 @@
+<div [ngClass]=" isOpen ? 'sideNav-Bar' : 'sidenavbar'">
+ 
+    <mat-list>
+
+        <mat-list-item>
+            <div class="d-flex">
+                <mat-icon class="menu-icon" *ngIf="!isOpen" (click)="increaseMenu()">menu</mat-icon>
+                <div *ngIf="isOpen"></div>
+            </div>
+            <div class="d-flex">
+                <mat-icon class="menu-icon" *ngIf="isOpen" (click)="decreaseMenu()">close</mat-icon>
+                <div *ngIf="isOpen"></div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item routerLink="/home" routerLinkActive="active" (click)="decreaseMenu()">
+            <div class="d-flex">
+                <i class="bi bi-house-door"></i>
+                <div *ngIf="isOpen" class="list-icons">Dashboard</div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item routerLink="/dashboard" routerLinkActive="active" (click)="decreaseMenu()">
+            <div class="d-flex">
+                <i class="bi bi-journal-plus"></i>
+                <div *ngIf="isOpen" class="list-icons">All Distributors</div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item  routerLinkActive="active" (click)="decreaseMenu()">
+            <div class="d-flex">
+                <i class="bi bi-people"></i>
+                <div *ngIf="isOpen" class="list-icons">Customers</div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item routerLink="/all-proposals" routerLinkActive="active" (click)="decreaseMenu()">
+            <div class="d-flex">
+                <img src="../../assets/system-uicons_clipboard-notes.svg">
+                <div *ngIf="isOpen" class="list-icons">Proposals</div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item routerLink="/admin-profile" routerLinkActive="active" (click)="decreaseMenu()">
+            <div class="d-flex">
+                <i class="bi bi-person"></i>
+                <div *ngIf="isOpen" class="list-icons">My profile</div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item  routerLinkActive="active" (click)="decreaseMenu()">
+            <div class="d-flex">
+                <i class="bi bi-box-arrow-right"></i>
+                <div *ngIf="isOpen" class="list-icons">Log out</div>
+            </div>
+        </mat-list-item>
+        
+        <!-- <mat-list-item routerLink="/settings" routerLinkActive="active">
+            <img src="../../assets/settings.svg" alt=""></mat-list-item> -->
+
+    </mat-list>
+</div>

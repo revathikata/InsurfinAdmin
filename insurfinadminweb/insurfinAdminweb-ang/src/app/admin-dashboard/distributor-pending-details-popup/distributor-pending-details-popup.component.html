@@ -1,0 +1,263 @@
+<div class="pending-popup">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="distributor-dtls">
+                <div class="row">
+                    <div class="col-3 mt-5">
+                        <img src="../../../assets/profile-img.svg" class="profile-img">
+                    </div>
+                    <div class="col-9 mt-5 distributor-details">
+                        <P class="distributor-name">{{TableData.name}}</P>
+                        <p class="distributor-date">Distributor since April 2023</p>
+                    </div>
+                </div>
+                <div class="horizontal-line">
+                    <hr>
+                </div>
+                <div class="section container">
+                    <p class="personal-details" [class.selected]="isPersonalDetails" (click)="openPersonalDetails()">Personal Details</p>
+                </div>
+                <div class="horizontal-line">
+                    <hr class="hr-line">
+                </div>
+                <div class="section container">
+                    <p class="document-upload" [class.selected]="isDoccumentsUpload" (click)="kycVerification()">KYC Verification</p>
+                </div>
+                <div class="horizontal-line">
+                    <hr class="hr-line">
+                </div>
+                <div class="section container">
+                    <p class="document-upload" [class.selected]="isAffiliation" (click)="affiliationLenderDetails()">Affiliation and lender details</p>
+                </div>
+                <div class="horizontal-line">
+                    <hr class="hr-line">
+                </div>
+                <div class="section container">
+                    <p class="document-upload" [class.selected]="isComment" (click)="rejectedComments()">Comments</p>
+                </div>
+                <div class="section container">
+                    <p class="approve-date">Approved on 02 Apr. 2023</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8 p-0">
+            <div *ngIf="isPersonalDetails">
+                <div class="row mt-3">
+                    <div class="col-10"></div>
+                    <div class="col-2">
+                        <mat-icon (click)="onCloseIcon()">close</mat-icon>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 details-flex">
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">Email ID</p>
+                            <p class="gmail">{{TableData.email}}</p>
+                        </div>
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">Current Address</p>
+                            <p class="gmail">{{communicationAddress[0].addressLine1}},{{communicationAddress[0].addressLine2}}
+                                {{communicationAddress[0].city}},{{communicationAddress[0].state}}{{communicationAddress[0].pinCode}}
+                            </p>
+                        </div>
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">PAN number</p>
+                            <p class="gmail">{{TableData.panNumber}}</p>
+                        </div>
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">GST number</p>
+                            <p class="gmail">{{TableData.gstNumber}}</p>
+                        </div>
+                    </div>
+                    <div class="col-5 details-flex">
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">Phone Number</p>
+                            <p class="gmail">+91 {{TableData.phoneNumber}}</p>
+                        </div>
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">Permanent Address</p>
+                            <p class="gmail">{{PermentAddress[0].addressLine1}},{{PermentAddress[0].addressLine2}}
+                                {{PermentAddress[0].city}},{{PermentAddress[0].state}}{{PermentAddress[0].pinCode}}</p>
+                        </div>
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">Aadhar number</p>
+                            <p class="gmail">{{TableData.aadhaarNumber}}</p>
+                        </div>
+                        <div class="persnl-dtls mt-4">
+                            <p class="email-id">Bank account number</p>
+                            <p class="gmail">{{TableData.accountNumber}}</p>
+                        </div>
+                    </div>
+                    <!-- <div class="col-2">
+                        <mat-icon class="close" (click)="closePopUp()">close</mat-icon>
+                    </div> -->
+                </div>
+                <div class="row footer" *ngIf="this.dialogData.status !== 'ApprovedView'">
+                    <div class="col-6 mt-4">
+                        <button class="rejected-btn"(click)="openRejectedPopUp('confirmedReject',TableData.uuid,commnt)" >Rejected</button>
+                    </div>
+                    <div class="col-6 mt-4">
+                        <button class="approved-btn" (click)="openAcceptedPopup('confirmedApprove',TableData.uuid,commnt)">Approved</button>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="isDoccumentsUpload">
+                <div class="row mt-3">
+                    <div class="col-10 details-flex">
+                        <p class="kyc-details">KYC Details</p>
+                    </div>
+                    <div class="col-2">
+                        <mat-icon class="" (click)="closePopUp()">close</mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <hr class="kyc-details-hr-line">
+                </div>
+
+               <div class="row">
+                <div class="col-4">
+                    <div class="mt-3">
+                        <p class="aadhar-flex">Aadhaar</p>
+                        <p class="aadhar-num-masked">{{TableData.aadhaarNumber}}</p>
+                    </div>
+                    <div  class="mt-3">
+                        <p class="aadhar-flex">PAN</p>
+                        <p class="aadhar-num-masked">{{TableData.panNumber}}</p>
+                    </div>
+                    <div  class="mt-3">
+                        <p class="aadhar-flex">Bank Account Details</p>
+                        <p class="aadhar-num-masked">{{TableData.accountNumber}}</p>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="mt-4">
+                        <img src="../../../assets/verified-tick-img.svg" alt="">
+                        <span class="verifed">Verified</span>
+                    </div>
+                    <div class="bank-details-verified">
+                        <img src="../../../assets/verified-tick-img.svg" alt="">
+                        <span class="verifed">Verified</span>
+                    </div>
+                    <div class="bank-details-verified">
+                        <img src="../../../assets/verified-tick-img.svg" alt="">
+                        <span class="verifed">Verified</span>
+                    </div>
+                </div>
+                <!-- <div class="row kyc-footer ">
+                    <div class="col-6 mt-4 ">
+                        <button class="rejected-btn" >Rejected</button>
+                    </div>
+                    <div class="col-6 mt-4">
+                        <button class="approved-btn" >Approved</button>
+                    </div>
+                </div> -->
+               </div>
+            </div>
+
+
+            <div *ngIf="isAffiliation">
+                <div class="row mt-3">
+                    <div class="col-10 details-flex">
+                        <p class="kyc-details">Affiliation and lender details</p>
+                    </div>
+                    <div class="col-2">
+                        <mat-icon class="" (click)="closePopUp()">close</mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <hr class="kyc-details-hr-line">
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <div>
+                            <p>Affiliated with</p>
+                            <ng-select class="statedropdown custom-ngselect" [items]="TotalAffliciation" placeholder="Select Affiliation"
+                             [clearable]="false" [searchable]="false" ></ng-select>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <p>Affiliated Since</p>
+                        <ng-select class="statedropdown custom-ngselect" [items]="TotalLoans" placeholder=" accordion  "
+                         [clearable]="false" [searchable]="false" >
+                         <ng-template #placeholderTemplate>
+                            <img src="../../../assets/calender.svg" class="placeholder-image" />
+                            Select Date
+                        </ng-template>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-5">
+                        <p>Lender associated with</p>
+                            <ng-select class="statedropdown custom-ngselect" [items]="selectLender" placeholder="Select Lender"
+                             [clearable]="false" [searchable]="false" ></ng-select>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <p style="color:var(--blues-buttons, #2791E0)"> <img  src="../../../assets/plus-circle.svg" >&nbsp;<b>Add More</b></p>
+                    </div>
+                </div>
+
+            </div>
+            <div *ngIf="isComment">
+                <div class="row mt-3">
+                    <div class="col-10 details-flex">
+                        <p class="kyc-details">Comments</p>
+                    </div>
+                    <div class="col-2">
+                        <mat-icon class="" (click)="closePopUp()">close</mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <hr class="kyc-details-hr-line">
+                </div>
+                <div class="row">
+                   <div class="col-11">
+                        <div>
+                            <p class="add-comments">Add Comments</p>
+                        </div>
+                        <div class="mt-5">
+                            <p>Please mention <b>Comments</b> if any.</p>
+                            <textarea class="enter-comment" cols="70" rows="5" placeholder="Enter Comments" [(ngModel)]="commnt"></textarea>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <button class="btn btn-outline-primary cancel-btn">Cancel</button>
+                            </div>
+                            <div class="col-8">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="col-1">
+
+                   </div>
+                </div>
+
+            </div>
+
+
+            <div *ngIf="isRejectedPopup">
+                <div class="rejected-popup">
+                    <div class="row">
+                        <div class="col-2">
+                            <mat-icon class="error">error_outline</mat-icon>
+                        </div>
+                        <div class="col-7">
+                            <p class="please-confirm">Please Confirm</p>
+                        </div>
+                        <div class="col-3">
+                            <mat-icon mat-dialog-close class="closeicon">close</mat-icon>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

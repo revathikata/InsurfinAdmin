@@ -1,0 +1,18 @@
+<div class="login" *ngIf="!(isAuthenticated | async)">
+    <app-login></app-login>
+</div>
+<div class="section" *ngIf="(isAuthenticated | async)">
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav opened="true" [ngStyle]="{'width.em': sideNav}" [attr.closed]="sidebarClosed ? '' : null"
+            mode="side" (mouseleave)="decreaseMenu()">
+            <app-sidenav [isOpen]="sideNav > 5" (increaseMenuClicked)="increaseMenu()"
+                (decreaseMenuClicked)="decreaseMenu()"></app-sidenav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <mat-toolbar>
+                <app-toolbar></app-toolbar>
+            </mat-toolbar>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

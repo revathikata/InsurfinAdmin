@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/dist/css/bootstrap.css";
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius: 25px;
+    background: #b3b3bc;
+  }
+  ::-webkit-scrollbar-track{
+   border-radius: 25px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }

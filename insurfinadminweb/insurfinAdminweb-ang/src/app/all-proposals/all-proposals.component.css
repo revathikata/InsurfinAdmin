@@ -1,0 +1,269 @@
+.userName {
+  color: #005AAA;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  /* 120% */
+  letter-spacing: -0.8px;
+}
+
+.ng-select.selectDate::ng-deep .ng-arrow {
+  display: none;
+
+}
+
+.ng-select.selectDate::ng-deep .ng-arrow-wrapper {
+  width: 27px;
+  background-image: url('/assets/CaretDownarrow.svg');
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  margin-top: -5px;
+
+}
+
+.ng-select-opened.selectDate ::ng-deep .ng-arrow-wrapper {
+  background-image: url('/assets/Caretuparrow.svg');
+  color:
+    #005AAA !important;
+
+}
+
+::ng-deep.selectDate.ng-select.selectDate .ng-has-value .ng-placeholder {
+  display: none;
+}
+
+/*  */
+
+/* ::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items :hover{
+   color:
+   #005AAA;
+ } */
+::ng-deep.selectDate.ng-select {
+  border: #C6C6C6 1.5px solid;
+  height: 36px !important;
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+  margin-left: 45px;
+  margin-top: 25px;
+  width: 80% !important;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  color: #005AAA;
+
+}
+
+::ng-deep.ng-select div,
+.ng-select input,
+.ng-select span {
+  box-sizing: border-box;
+  padding-left: 6px;
+}
+
+.calenderimg {
+  width: 0;
+  top: -27px;
+  left: 215px;
+  position: relative;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel {
+  margin-top: 10px;
+  background: white;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 163px;
+  margin-left: -24px;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid rgb(236, 228, 228);
+  padding: 6px;
+  color: black;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:hover {
+  color: #005AAA;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .scroll-host {
+  padding: 0;
+}
+
+.distributorReportcard {
+  height: 100%;
+  border-radius: 16px;
+  background: var(--greys-white, #FFF) !important;
+}
+
+.filter {
+  padding: 2px 2px;
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.downloadDescriptioon {
+  color: var(--blues-buttons, #2791E0);
+  font-size: 14px;
+  font-style: normal;
+  position: relative;
+  bottom: 22px;
+  left: 34px;
+}
+
+.mat-button {
+  border-radius: 25px;
+}
+
+::ng-deep.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  line-height: 15px;
+}
+
+.mat-button-toggle {
+  color: #005AAA;
+  margin: 5px;
+}
+
+.mat-button-toggle:checked {
+  color: #FFFFFF;
+  border: 1px solid black !important;
+  width: 100px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #005AAA;
+}
+.mat-button-toggle.mat-button-toggle-checked {
+  background-color: #005AAA;
+  color: #FFFFFF;
+  border-radius: 20px;
+}
+.mat-button-toggle[value="pending"] {
+  background-color: #005AAA !important;
+  color: #FFFFFF !important;
+}
+.subHead {
+  position: relative;
+  left: 47px;
+  cursor: pointer;
+}
+
+.sorting {
+  padding: 2px 2px;
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.viewMore {
+  height: 100%;
+  border-radius: 16px;
+  text-align: center;
+  justify-content: center;
+  color: #2791E0;
+  cursor: pointer;
+  background: var(--greys-white, #FFF);
+  box-shadow: 0px 0px 5px 0px rgba(77, 127, 174, 0.20);
+}
+
+::ng-deep .mat-mdc-table .mat-mdc-header-cell {
+  color: #7D848D;
+}
+
+.mat-mdc-paginator {
+  display: contents;
+}
+
+.Doccumentation-column {
+  color: green;
+}
+
+.Doccumentation-column2 {
+  color: red;
+}
+
+.Action-column {
+  cursor: pointer;
+  color: #2791E0;
+  text-decoration: underline;
+}
+
+.Status-column {
+  cursor: pointer;
+  color: #C52727;
+  text-decoration: underline;
+}
+
+.accept-status-column {
+  cursor: pointer;
+  color: #48B16E;
+  text-decoration: underline;
+}
+.bg-green {
+  background: var(--others-success, #48B16E);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-red {
+  background: var(--others-success, #C52727);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-yellow {
+  background: var(--others-success, #E59510);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-blue {
+  background: var(--others-success, #005AAA);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-grey {
+  background: var(--others-success, #7D848D);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+.duss {
+  color: var(--greys-white, #FFF);
+  text-align: left;
+  /* font-family: DM Sans; */
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  top: 5px;
+  right: 6px;
+}
+
+.approved {
+  color: var(--greys-secondary-text, #7D848D);
+  position: relative;
+  bottom: 10px;
+  left: 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.RefunTextcolumn{
+  cursor: pointer;
+}

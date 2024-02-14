@@ -1,0 +1,360 @@
+.userName {
+  color: #005AAA;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 5px;
+  /* line-height: 48px; 120% */
+  /* letter-spacing: -0.8px; */
+}
+
+.ng-select.selectDate::ng-deep .ng-arrow {
+  display: none;
+}
+
+.ng-select.selectDate::ng-deep .ng-arrow-wrapper {
+  width: 27px;
+  background-image: url('/assets/CaretDownarrow.svg');
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+
+.ng-select-opened.selectDate ::ng-deep .ng-arrow-wrapper {
+  background-image: url('/assets/Caretuparrow.svg');
+  color:
+    #005AAA !important;
+
+}
+
+::ng-deep.selectDate.ng-select.selectDate .ng-has-value .ng-placeholder {
+  display: none;
+}
+
+/*  */
+
+/* ::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items :hover{
+   color:
+   #005AAA;
+ } */
+::ng-deep.selectDate.ng-select {
+  border: #C6C6C6 1.5px solid;
+  height: 36px !important;
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+  margin-left: 45px;
+  margin-top: 25px;
+  width: 80% !important;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  color: #005AAA;
+
+}
+
+/* ::ng-deep .mdc-data-table__cell{
+  border-bottom:1 px solid #F6F6F6;
+} */
+
+::ng-deep .mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #F6F6F6;
+}
+
+::ng-deep.ng-select div,
+.ng-select input,
+.ng-select span {
+  box-sizing: border-box;
+  padding-left: 6px;
+}
+
+.calenderimg {
+  width: 0;
+  top: -27px;
+  left: 215px;
+  position: relative;
+
+}
+
+::ng-deep.selectDate .ng-dropdown-panel {
+  margin-top: 10px;
+  background: white;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 163px;
+  margin-left: -24px;
+}
+
+::ng-deep.mat-mdc-card {
+  border-radius: 16px;
+  background: var(--greys-white, #FFF);
+  box-shadow: 0px 0px 5px 0px rgba(77, 127, 174, 0.20);
+}
+
+.duss {
+  color: var(--greys-white, #FFF);
+  text-align: left;
+  /* font-family: DM Sans; */
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  top: 5px;
+  right: 6px;
+}
+
+.approved {
+  color: var(--greys-secondary-text, #7D848D);
+  position: relative;
+  bottom: 10px;
+  left: 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.bg-green {
+  background: var(--others-success, #48B16E);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-red {
+  background: var(--others-success, #C52727);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-yellow {
+  background: var(--others-success, #E59510);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-blue {
+  background: var(--others-success, #005AAA);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+.bg-grey {
+  background: var(--others-success, #7D848D);
+  border-radius: 50%;
+  width: 23.3px;
+  height: 23px;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid rgb(236, 228, 228);
+  padding: 6px;
+  color: black;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:hover {
+  color: #005AAA;
+}
+
+::ng-deep.selectDate .ng-dropdown-panel .scroll-host {
+  padding: 0;
+}
+
+.distributorReportcard {
+  height: 100%;
+  border-radius: 16px;
+  background: var(--greys-white, #FFF) !important;
+}
+
+.filter {
+  padding: 2px 2px;
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.sorting {
+  padding: 6px 7px;
+  border: 1px solid black;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.viewMore {
+  height: 100%;
+  border-radius: 16px;
+  text-align: center;
+  justify-content: center;
+  color: #2791E0;
+  cursor: pointer;
+  background: var(--greys-white, #FFF);
+
+  /* Card Dropshadow */
+  box-shadow: 0px 0px 5px 0px rgba(77, 127, 174, 0.20);
+}
+
+:host ::ng-deep .mat-mdc-table .mat-mdc-header-cell {
+  color: #7D848D;
+}
+
+.main-dashboard {
+  /* margin-left:-30px; */
+}
+
+.download-pdf {
+  cursor: pointer;
+}
+
+.customersHead {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  color: #041427;
+}
+
+mat-tab {
+  display: flex;
+  position: relative;
+  background: grey;
+
+  box-shadow: #1292EE;
+  padding: 0.75rem;
+  border-radius: 99px;
+  z-index: 2;
+}
+
+::ng-deep .mat-tab-header {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 547px !important;
+  border-radius: 25px;
+  background: white;
+  left: 35%;
+  height: 35px;
+}
+
+::ng-deep .mat-tab-label {
+  opacity: 1;
+  border-left: 3px solid #E0F1E5;
+}
+
+::ng-deep.mat-tab-label.mat-tab-label-active:not(.mat-tab-disabled),
+.mat-tab-label.mat-tab-label-active.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background: transparent linear-gradient(180deg, #007E2F 0%, var(--unnamed-color-00b444) 13%, var(--unnamed-color-00b444) 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #007E2F 0%, #00B444 13%, #00B444 100%) 0% 0% no-repeat padding-box;
+  color: white;
+  opacity: 1;
+  height: 40px !important;
+  border-left: 3px solid #00B444;
+}
+
+::ng-deep .mat-tab-label:hover {
+  background-color: #E0F1E5;
+  opacity: 1;
+  border-left: 3px solid #E0F1E5;
+}
+
+::ng-deep.order-lab .mat-tab-header {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 97% !important;
+  height: 46px;
+  border-radius: 25px;
+  background: white;
+  left: 2%;
+
+}
+
+.Doccumentation-column {
+  color: #E59510;
+}
+
+.mat-button {
+  border-radius: 25px;
+}
+
+::ng-deep.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  line-height: 15px;
+}
+
+.mat-button-toggle {
+  color: #005AAA;
+  margin: 5px;
+}
+
+.mat-button-toggle.mat-button-toggle-checked {
+  background-color: #005AAA;
+  color: #FFFFFF;
+  border-radius: 20px;
+}
+
+.details-list-Scrolling {
+  /* overflow-y: scroll; */
+  /* height: 250px; */
+  overflow-x: hidden;
+  border-radius: 16px;
+  background: var(--greys-white, #FFF);
+
+  /* Card Dropshadow */
+  box-shadow: 0px 0px 5px 0px rgba(77, 127, 174, 0.20);
+}
+
+.review {
+  cursor: pointer;
+  font-size: 16px;
+  color: #1292EE;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid #1292EE;
+  border-radius: 12px;
+  width: 80px;
+  height: 30px;
+  padding-top: 5px;
+
+}
+
+.headerrr {
+  color: #041427;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
+
+.datepicker-dialog { 
+  max-width: 700px !important;
+  width: 100vw;
+  position: absolute !important;
+
+  .mat-calendar {
+      width: 100vw;
+      max-width: 100%;
+      height: 100vw;
+      max-height: 700px;
+  }
+
+  .mat-calendar-body-label:not(:last-of-type) {
+      visibility: hidden;
+  }
+
+  .mat-calendar-body-label:last-of-type {
+      display: none;
+  }
+}

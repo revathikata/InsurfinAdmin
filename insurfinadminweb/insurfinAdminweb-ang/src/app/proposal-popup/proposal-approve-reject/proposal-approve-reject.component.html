@@ -1,0 +1,110 @@
+<!-- reject start -->
+<div class="container rejectpopUp" *ngIf="dialogData.documentType ==='proposalReject'">
+    <div class="row mt-5">
+        <div class="col-10">
+            <img src="../../../../assets/WarningCircle.svg"> &nbsp;<b style="font-size: 18px;">Add Comments for Rejection</b>
+        </div>
+        <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()" >close</mat-icon>
+    </div>
+</div>
+<div class="row mt-5">
+<div class="col-12">
+    <p class="commentStory">Please mention reasons for rejection in <b>Comments.</b></p>
+</div>
+<div class="row">
+    <input type="text" placeholder="Enter comments" class="comment-box">
+</div>
+<div class="row mt-3  buttons">
+  <button class="col-6 cancelBtn">cancel</button>
+  <button class="col-6 submitBtn" (click)="onSubmit('confirmReject',dialogData.proposalId)">Submit</button>
+</div>
+</div>
+</div>
+<!-- confirm Reject -->
+<div class="container confirmRejectpopup" *ngIf="dialogData.documentType ==='confirmReject'">
+    <div class="row mt-4">
+        <div class="col-10">
+            <span><img src="../../../../assets/WarningCircle.svg">&nbsp;<b style="font-size: 18px;">Please confirm</b></span>
+        </div>
+        <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()">close</mat-icon>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 notifierclass">
+            <p>Are you sure you want to <b>Reject</b> this proposer?<br>
+            The money will be transferred back to lender.</p>
+        </div>
+    </div>
+    <div class="row mt-4  d-flex justify-content-around">
+        <button class="col-6 goback">No,go back</button>
+        <button class="col-6 reject-Button" (click)="confirmReject('rejectSucess',dialogData.proposalId)">Yes,reject</button>
+      </div>
+</div>
+<div class="container"  *ngIf="dialogData.documentType==='rejectSucess'">
+    <div class="row mt-2">
+        <div class="col-10">
+           <span> <img src="../../../../assets/CheckCircle (2).svg">&nbsp;<b style="font-size: 18px;">Success!</b></span> 
+        </div>
+           <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()">close</mat-icon>
+           </div>
+        </div>
+  
+    <div class="row mt-3">
+        <p class="commentStory">Proposer has been <b>rejected</b> successfully.</p>
+    </div>
+</div>
+<!-- reject end -->
+<!-- approve start -->
+
+<div class="container confirmRejectpopup" *ngIf="dialogData.documentType==='proposalApprove'">
+    <div class="row mt-4">
+        <div class="col-10">
+            <span><img src="../../../../assets/WarningCircle.svg">&nbsp;<b style="font-size: 18px;">Please confirm</b></span>
+        </div>
+        <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()">close</mat-icon>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 notifierclass">
+            <p>Are you sure you want to <b>Approve</b> this proposer and transfer money to insurer?</p>
+        </div>
+    </div>
+    <div class="row mt-4  d-flex justify-content-around">
+        <button class="col-6 goback">No,go back</button>
+        <button class="col-6 approve-Button" (click)="confirmReject('approveSucess',dialogData.proposalId)">Yes,Approve</button>
+      </div>
+</div>
+<div class="container"  *ngIf="dialogData.documentType==='approveSucess'">
+    <div class="row mt-2">
+        <div class="col-10">
+           <span> <img src="../../../../assets/CheckCircle (2).svg">&nbsp;<b style="font-size: 18px;">Success!</b></span> 
+        </div>
+           <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()">close</mat-icon>
+           </div>
+        </div>
+  
+    <div class="row mt-3">
+        <p class="commentStory">Proposer has been <b>Approved</b> successfully.</p>
+    </div>
+</div>
+
+<div class="container" *ngIf="dialogData.documentType==='downloadReports'">
+    <div class="row mt-4 li-2">
+        <div class="col-10">
+           <span> <img src="../../../../assets/CheckCircle (2).svg">&nbsp;<b style="font-size: 18px;">Success!</b></span> 
+        </div>
+           <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()">close</mat-icon>
+           </div>
+        </div>
+        <div>
+        </div>
+    <div class="row">
+        <p class="reportDownload">Report has been downloaded.&nbsp;&nbsp;&nbsp; <span class="gotoFile">Go to file</span></p>
+    </div>
+</div>

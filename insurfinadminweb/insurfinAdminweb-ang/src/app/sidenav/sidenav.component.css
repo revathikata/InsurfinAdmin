@@ -1,0 +1,60 @@
+.sidenavbar {
+  position: fixed;
+  width: 4rem;
+  height: 100vh;
+  background: #fff;
+  border-left: 10px solid var (--blue);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.sideNav-Bar {
+  position: fixed;
+  width: 12rem;
+  height: 100vh;
+  background: #fff;
+  border-left: 10px solid var (--blue);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: 0.5s;
+  z-index: 1;
+  box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+mat-list{
+  margin-left: 8px;
+}
+
+mat-list-item:hover {
+  cursor: pointer;
+}
+
+.active {
+  background: #eef6fd;
+  border-radius: 8px;
+}
+
+.active .list-icons,
+.active i {
+  color: #005aaa;
+}
+
+
+i {
+  font-size: 20px;
+  color: #041427;
+}
+
+.menu-icon {
+  color: #041427;
+  cursor: pointer;
+}
+
+.list-icons {
+  font-size: 16px;
+  font-weight: 400;
+  color: #041427;
+  margin-left: 8px;
+}

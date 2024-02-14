@@ -1,0 +1,47 @@
+<div class="container rejectpopUp" *ngIf="dialogData.documentType ==='proposalCancel'">
+    <div class="row mt-5">
+        <div class="col-10">
+            <img src="../../../../assets/WarningCircle.svg"> &nbsp;<b style="font-size: 18px;">Add comments for cancellation</b>
+        </div>
+        <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()" >close</mat-icon>
+    </div>
+</div>
+<div class="row mt-3">
+<div class="col-12">
+    <p class="commentStory">Please mention reasons for cancellation in the <b>Comments.</b></p>
+</div>
+<div class="row">
+    <!-- <input type="text" placeholder="Enter comments" class="comment-box"> -->
+    <textarea name="" id="" cols="85" rows="2" class="comment-box"  placeholder="Your comment"></textarea>
+</div>
+<div class="row mt-3  buttons">
+  <button class="col-6 cancelBtn">cancel</button>
+  <button class="col-6 submitBtn" (click)="proposalOnSubmit('OnSubmit')">Submit</button>
+</div>
+</div>
+</div>
+
+<div class="container rejectpopUp" *ngIf="dialogData.documentType ==='proposalLender'">
+    <div class="row mt-5">
+        <div class="col-10">
+            <img src="../../../../assets/WarningCircle.svg"> &nbsp;<b style="font-size: 18px;">Add Comments for Returning Funds to Lender</b>
+        </div>
+        <div class="col-2">
+            <mat-icon class="close-popup" (click)="onCloseIcon()" >close</mat-icon>
+    </div>
+</div>
+<div class="row mt-3">
+<div class="col-12">
+    <p class="commentStory">Please mention reasons for returning funds to lender in <b>Comments.</b></p>
+</div>
+<div class="row">
+    <!-- <input type="text" placeholder="Enter comments" class="comment-box"> -->
+    <textarea name="" id="" cols="85" rows="2" class="comment-box"  placeholder="Your comment"></textarea>
+</div>
+<div class="row mt-3  buttons">
+  <button class="col-6 cancelBtn">cancel</button>
+  <button class="col-6 submitBtn" (click)="proposalOnSubmit('commentSubmit')">Submit</button>
+</div>
+</div>
+</div>

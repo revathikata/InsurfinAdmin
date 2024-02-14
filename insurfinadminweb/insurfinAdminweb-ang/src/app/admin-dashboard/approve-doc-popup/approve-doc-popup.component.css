@@ -1,0 +1,82 @@
+
+.apprv{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 500px;
+ 
+}
+.aprrovedocument{
+    padding: 10px;
+}
+.tablee{
+    font-size: 13px;
+}
+.approveTable{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #005AAA;
+}
+.approveTable tr{
+    border-bottom: 1px solid #005AAA;
+}
+.doc{
+    border: 1px solid #005AAA;
+}
+.approveTable td, th{
+    padding: 2px 10px;
+    font-size: 13px;
+}
+.Adhar, .pan, .bank{
+    border-right: 1px solid #005AAA;
+    height: 430px;
+    /* border-bottom: 1px solid #005AAA; */
+    margin: auto;
+}
+.appovebtn{
+background-color: #005AAA;
+padding: 2px 10px;
+color: white;
+}
+.rejectbtn{
+background-color: red;
+padding: 2px 10px;
+color: white;
+margin-left: 10px;
+}
+.bankImg{
+    width: 274px;
+    height: 217px;
+    padding: 10px;
+}
+.adharImg{
+    width: 240px;
+    border: 1px solid;
+    height: 150px;
+    padding: 10px;
+    margin: 10px 0px 10px 10px;
+}
+/* .imgg{
+    width: 272px;
+    border: 1px solid;
+    height: 188px;
+    padding: 10px;
+    margin: auto;
+} */
+.NameCl{
+color: #005AAA;
+padding-left: 10px;
+}
+.commentDiv{
+    margin: 12px;
+}
+/* .commnt{
+    height: 47px;
+    width: 77%;
+} */
+.close-icon{
+    left: 97%;
+    position: relative;
+    font-weight: 600;
+    /* top:-12px; */
+    cursor: pointer;
+}
